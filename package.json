@@ -7,7 +7,8 @@
         "./configure",
         "--prefix=#{self.install}",
         "--disable-dependency-tracking",
-        "--disable-silent-rules"
+        "--disable-silent-rules",
+        "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}"
       ],
       "make",
       "make install"
