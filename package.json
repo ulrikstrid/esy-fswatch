@@ -13,7 +13,7 @@
         "--disable-silent-rules"
       ],
       "#{os == 'windows' ? 'mv libtool libtool.bak' : ':'}",
-      "#{os == 'windows' ? 'sed -e \"s/\\(allow_undefined=\\)yes/\\1no/\" libtool.bak > libtool' : ':'}",
+      "#{os == 'windows' ? 'sed -e \"s/\\(allow_undefined=\\)yes/\\\u0001no/\" libtool.bak > libtool' : ':'}",
       "#{os == 'windows' ? 'make install-strip' : ':'}",
       "make"
     ],
