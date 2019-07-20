@@ -3,7 +3,7 @@
   "override": {
     "buildsInSource": true,
     "build": [
-      "#{os == 'windows' ? './patch-windows.sh' : ':'}",
+      "#{os == 'windows' ? './patch-windows.sh' : 'true'}",
       [
         "./configure",
         "#{os == 'windows' ? 'CFLAGS=\"-DHAVE_WINDOWS\"' : ''}",
@@ -12,9 +12,9 @@
         "--disable-dependency-tracking",
         "--disable-silent-rules"
       ],
-      "#{os == 'windows' ? 'mv libtool libtool.bak' : ':'}",
-      "#{os == 'windows' ? 'sed -e \"s;(allow_undefined=)yes;\u0001no;\" libtool.bak > libtool' : ':'}",
-      "#{os == 'windows' ? 'make install-strip' : ':'}",
+      "#{os == 'windows' ? 'mv libtool libtool.bak' : 'true'}",
+      "#{os == 'windows' ? 'sed -e \"s;(allow_undefined=)yes;\u0001no;\" libtool.bak > libtool' : 'true'}",
+      "#{os == 'windows' ? 'make install-strip' : 'true'}",
       "make"
     ],
     "install": [
