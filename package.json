@@ -3,15 +3,19 @@
   "override": {
     "buildsInSource": true,
     "build": [
+      "#{os == 'windows' ? './patch-windwos.sh' : ':'}",
       [
         "./configure",
+        "#{os == 'windows' ? 'CFLAGS=\"-DHAVE_WINDOWS\"' : ''}",
+        "#{os == 'windows' ? 'CXXFLAGS=\"-DHAVE_WINDOWS\"' : ''}",
         "--prefix=#{self.install}",
         "--disable-dependency-tracking",
-        "--disable-silent-rules",
-        "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}"
+        "--disable-silent-rules"
       ],
-      "make",
-      "make install"
+      "#{os == 'windows' ? 'mv libtool libtool.bak' : ':'}",
+      "#{os == 'windows' ? 'sed -e \"s/\\(allow_undefined=\\)yes/\\1no/\" libtool.bak > libtool' : ':'}",
+      "#{os == 'windows' ? 'make install-strip' : ':'}",
+      "make"
     ],
     "install": [
       "make install"
