@@ -1,0 +1,21 @@
+jobs:
+- template: .ci/build.yml  # Template reference
+  parameters:
+    ESY__CACHE_INSTALL_PATH: /Users/vsts/.esy/3____________________________________________________________________/i
+    host: macOS
+    pool:
+      vmImage: 'macOS-latest'
+
+- template: .ci/build.yml  # Template reference
+  parameters:
+    ESY__CACHE_INSTALL_PATH: /home/vsts/.esy/3_____________________________________________________________________/i
+    host: Linux
+    pool:
+      vmImage: 'Ubuntu-latest'
+
+- template: .ci/build.yml  # Template reference
+  parameters:
+    ESY__CACHE_INSTALL_PATH: /C/Users/VssAdministrator/.esy/3_/i
+    host: Windows
+    pool:
+      vmImage: 'vs2017-win2016'

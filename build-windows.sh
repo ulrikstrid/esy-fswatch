@@ -1,3 +1,6 @@
+# These changes are from https://github.com/emcrisostomo/fswatch/issues/214
+# Thanks to @brechtsanders for making fixing this
+
 # fix missing S_ISLNK in libfswatch/src/libfswatch/c++/poll_monitor.cpp
 patch -ulbf libfswatch/src/libfswatch/c++/poll_monitor.cpp << EOF
 @@ -131,2 +131,3 @@
