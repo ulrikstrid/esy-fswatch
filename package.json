@@ -3,7 +3,7 @@
   "override": {
     "buildsInSource": true,
     "build": [
-      "#{os == 'windows' ? './patch-windows.sh' : 'true'}",
+      "#{os == 'windows' ? './build-windows.sh' : 'true'}",
       [
         "./configure",
         "#{os == 'windows' ? 'CFLAGS=\"-DHAVE_WINDOWS\"' : ''}",
