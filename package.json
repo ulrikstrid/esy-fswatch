@@ -14,6 +14,7 @@
         "./configure",
         "#{os == 'windows' ? 'CFLAGS=\"-DHAVE_WINDOWS\"' : ''}",
         "#{os == 'windows' ? 'CXXFLAGS=\"-DHAVE_WINDOWS\"' : ''}",
+        "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}",
         "--prefix=#{self.install}",
         "--disable-dependency-tracking",
         "--disable-silent-rules"
@@ -27,9 +28,6 @@
     "install": [
       "make install"
     ],
-    "buildEnv": {
-      "CC": "#{os == 'windows' ? 'x86_64-w64-mingw32-gcc' 'gcc'}"
-    },
     "exportedEnv": {
       "FSWATCH_INCLUDE_PATH": {
         "val": "#{self.install / 'include'}",
