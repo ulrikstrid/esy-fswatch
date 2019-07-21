@@ -19,7 +19,7 @@ jobs:
   - script: mkdir -p test_dir
     displayName: 'make test dir'
   - bash: |
-      echo '{"dependencies": {"@esy-packages/esy-fswatch" : "ulrikstrid/esy-fswatch:package.json#'$(git rev-parse --short HEAD)'"}}' > package.json
+      echo '{"dependencies": {"@esy-packages/esy-fswatch" : "ulrikstrid/esy-fswatch:package.json#'$(git rev-parse --short HEAD)'", "@esy-packages/esy-automake": "esy-packages/esy-automake#924ced5"}}' > package.json
     displayName: 'create test package.json'
     workingDirectory: test_dir
   - script: esy install
