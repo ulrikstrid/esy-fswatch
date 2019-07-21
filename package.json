@@ -4,6 +4,7 @@
     "buildsInSource": "_build",
     "build": [
       "find ./ -exec touch -t 200905010101 {} +",
+      "ls",
       [
         "bash",
         "-c",
