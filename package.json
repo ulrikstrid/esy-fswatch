@@ -4,7 +4,11 @@
     "buildsInSource": true,
     "build": [
       "find ./ -exec touch -t 200905010101 {} +",
-      "#{os == 'windows' ? './build-windows.sh' : 'true'}",
+      [
+        "bash",
+        "-c",
+        "#{os == 'windows' ? './build-windows.sh' : 'true'}"
+      ],
       [
         "./configure",
         "#{os == 'windows' ? 'CFLAGS=\"-DHAVE_WINDOWS\"' : ''}",
