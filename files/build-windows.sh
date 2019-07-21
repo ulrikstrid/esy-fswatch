@@ -102,10 +102,7 @@ touch README.illumos
 # mv libfswatch/configure.ac libfswatch/configure.ac.bak &&
 # grep -v "realpath\|regcomp\|select" libfswatch/configure.ac.bak > libfswatch/configure.ac
 
-
-patch  << EOF
---- configure   2019-07-21 20:52:17.000000000 +0200
-+++ configure.back      2019-07-21 20:51:16.000000000 +0200
+patch -ulbf configure << EOF
 @@ -20523,6 +20523,32 @@
  fi
  done
