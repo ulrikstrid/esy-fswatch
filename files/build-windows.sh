@@ -115,4 +115,4 @@ echo configure &&
  touch README libfswatch/README libfswatch/README config/ltmain.sh config.h.in &&
  automake -a -f -c &&
  autoreconf -f -i -I m4 -I $MINGWPREFIX/share/aclocal
-)) &&
+))
