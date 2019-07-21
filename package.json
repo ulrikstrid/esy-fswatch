@@ -37,9 +37,9 @@
         "val": "#{self.install / 'fswatch'}",
         "scope": "global"
       }
+    },
+    "dependencies": {
+      "automake": "esy-packages/esy-automake#924ced5"
     }
-  },
-  "dependencies": {
-    "automake": "esy-packages/esy-automake#924ced5"
   }
 }
