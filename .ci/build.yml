@@ -25,9 +25,6 @@ jobs:
   - script: esy install
     displayName: 'Install esy-deps'
     workingDirectory: test_dir
-  - script: esy build -p automake
-    displayName: 'Build automake'
-    workingDirectory: test_dir
   - script: esy build --verbose
     displayName: 'Build test project'
     workingDirectory: test_dir
