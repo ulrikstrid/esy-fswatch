@@ -99,8 +99,9 @@ EOF
 # fix missing file
 touch README.illumos
 # remove detection of realpath/regcomp/select
-mv libfswatch/configure.ac libfswatch/configure.ac.bak &&
-grep -v "realpath\|regcomp\|select" libfswatch/configure.ac.bak > libfswatch/configure.ac
+# mv libfswatch/configure.ac libfswatch/configure.ac.bak &&
+# grep -v "realpath\|regcomp\|select" libfswatch/configure.ac.bak > libfswatch/configure.ac
+
 # remove detection of realpath
 mv configure.ac configure.ac.bak2 &&
 grep -v "realpath" configure.ac.bak2 > configure.ac
