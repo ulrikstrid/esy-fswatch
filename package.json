@@ -4,6 +4,8 @@
   "override": {
     "buildsInSource": true,
     "build": [
+      "which automake",
+      "which autoreconf",
       "find ./ -exec touch -t 200905010101 {} +",
       [
         "bash",
