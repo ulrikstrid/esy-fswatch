@@ -25,8 +25,17 @@ jobs:
   - script: esy install
     displayName: 'Install esy-deps'
     workingDirectory: test_dir
+  - script: esy build -p @esy-packages/esy-automake
+    displayName: 'Build automake'
+    workingDirectory: test_dir
+  - script: esy b which automake
+    displayName: 'Check automake'
+    workingDirectory: test_dir
+  - script: esy b which autoreconf
+    displayName: 'Check autoreconf'
+    workingDirectory: test_dir
   - script: esy build --verbose
-    displayName: 'Build esy-deps'
+    displayName: 'Build test project'
     workingDirectory: test_dir
   - script: esy x fswatch --help
     displayName: 'Test if fswatch is installed'
