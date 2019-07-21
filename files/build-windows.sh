@@ -144,7 +144,3 @@ EOF
 # fix for building windows_monitor
 mv libfswatch/src/libfswatch/Makefile.am libfswatch/src/libfswatch/Makefile.am.bak &&
 sed -e "s/USE_CYGWIN/USE_WINDOWS/" libfswatch/src/libfswatch/Makefile.am.bak > libfswatch/src/libfswatch/Makefile.am
-echo configure &&
-(touch README libfswatch/README libfswatch/README config/ltmain.sh config.h.in &&
- automake -a -f -c
-)
