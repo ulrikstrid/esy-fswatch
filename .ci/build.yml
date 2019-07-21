@@ -25,7 +25,7 @@ jobs:
   - script: esy install
     displayName: 'Install esy-deps'
     workingDirectory: test_dir
-  - script: esy build
+  - script: esy build --verbose
     displayName: 'Build esy-deps'
     workingDirectory: test_dir
   - script: esy x fswatch --help
