@@ -36,5 +36,8 @@
         "scope": "global"
       }
     }
+  },
+  "dependencies": {
+    "esy-automake": "esy-packages/esy-automake#924ced5"
   }
 }
