@@ -20,7 +20,7 @@
       ],
       "#{os == 'windows' ? 'touch README libfswatch/README libfswatch/README config/ltmain.sh config.h.in' : 'true'}",
       "#{os == 'windows' ? 'mv libtool libtool.bak' : 'true'}",
-      "#{os == 'windows' ? 'sed -e \"s;(allow_undefined=)yes;\u0001no;\" libtool.bak > libtool' : 'true'}",
+      "#{os == 'windows' ? 'sed -n -e \"s;(allow_undefined=)yes;$1no;\" libtool.bak > libtool' : 'true'}",
       "#{os == 'windows' ? 'make install-strip' : 'true'}",
       "make"
     ],
