@@ -145,15 +145,4 @@ EOF
 mv libfswatch/src/libfswatch/Makefile.am libfswatch/src/libfswatch/Makefile.am.bak &&
 sed -e "s/USE_CYGWIN/USE_WINDOWS/" libfswatch/src/libfswatch/Makefile.am.bak > libfswatch/src/libfswatch/Makefile.am
 
-
-# fix for building windows_monitor
-mv libfswatch/src/libfswatch/Makefile libfswatch/src/libfswatch/Makefile.bak &&
-sed -e "s/USE_CYGWIN/USE_WINDOWS/" libfswatch/src/libfswatch/Makefile.bak > libfswatch/src/libfswatch/Makefile
-
-# fix for building windows_monitor
-mv libfswatch/Makefile libfswatch/Makefile.bak &&
-sed -e "s/USE_CYGWIN/USE_WINDOWS/" libfswatch/Makefile.bak > libfswatch/Makefile
-
-echo configure
-
 touch README libfswatch/README libfswatch/README config/ltmain.sh config.h.in
