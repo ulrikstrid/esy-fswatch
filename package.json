@@ -24,8 +24,8 @@
         "-c",
         "#{os == 'windows' ? './fix-libtools-windows.sh' : 'true'}"
       ],
-      "#{os == 'windows' ? 'make install-strip' : 'true'}",
-      "make"
+      "make",
+      "#{os == 'windows' ? 'make install-strip' : 'true'}"
     ],
     "install": [
       "make install"
