@@ -7,7 +7,7 @@
       [
         "bash",
         "-c",
-        "#{os == 'windows' ? './build-windows.sh' : 'true'}"
+        "#{os == 'windows' ? './prepare-windows.sh' : 'true'}"
       ],
       "find ./ -exec touch -t 200905010101 {} +",
       "#{os == 'windows' ? 'touch README libfswatch/README libfswatch/README config/ltmain.sh config.h.in' : 'true'}",
@@ -22,10 +22,8 @@
       [
         "bash",
         "-c",
-        "#{os == 'windows' ? './fix-libtools-windows.sh' : 'true'}"
-      ],
-      "make",
-      "#{os == 'windows' ? 'make install-strip' : 'true'}"
+        "#{os == 'windows' ? './build-windows.sh' : 'make'}"
+      ]
     ],
     "install": [
       "make install"
