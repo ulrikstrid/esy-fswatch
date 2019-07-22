@@ -12,12 +12,12 @@
       [
         "bash",
         "-c",
-        "#{os == 'windows' ? 'automake' : 'true'}"
+        "#{os == 'windows' ? 'autoreconf' : 'true'}"
       ],
       [
         "bash",
         "-c",
-        "#{os == 'windows' ? 'autoreconf' : 'true'}"
+        "#{os == 'windows' ? 'automake' : 'true'}"
       ],
       "find ./ -exec touch -t 200905010101 {} +",
       "#{os == 'windows' ? 'touch README libfswatch/README libfswatch/README config/ltmain.sh config.h.in' : 'true'}",
