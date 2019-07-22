@@ -10,6 +10,7 @@
         "#{os == 'windows' ? './build-windows.sh' : 'true'}"
       ],
       "find ./ -exec touch -t 200905010101 {} +",
+      "#{os == 'windows' ? 'touch README libfswatch/README libfswatch/README config/ltmain.sh config.h.in' : 'true'}",
       [
         "./configure",
         "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}",
@@ -18,8 +19,11 @@
         "--disable-dependency-tracking",
         "--disable-silent-rules"
       ],
-      "#{os == 'windows' ? 'touch README libfswatch/README libfswatch/README config/ltmain.sh config.h.in' : 'true'}",
-      "#{os == 'windows' ? 'mv libtool libtool.bak' : 'true'}",
+      [
+        "bash",
+        "-c",
+        "#{os == 'windows' ? './fix-libtools-windows.sh' : 'true'}"
+      ],
       "#{os == 'windows' ? 'sed -n -e \"s;(allow_undefined=)yes;$1no;\" libtool.bak > libtool' : 'true'}",
       "#{os == 'windows' ? 'make install-strip' : 'true'}",
       "make"
