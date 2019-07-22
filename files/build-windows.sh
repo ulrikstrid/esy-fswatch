@@ -102,42 +102,43 @@ touch README.illumos
 # mv libfswatch/configure.ac libfswatch/configure.ac.bak &&
 # grep -v "realpath\|regcomp\|select" libfswatch/configure.ac.bak > libfswatch/configure.ac
 
-patch -ulf configure << EOF
---- a/configure
-+++ b/configure
-@@ -20523,32 +20523,6 @@ else
+patch -lf << EOF
+--- configure.back	2019-07-22 08:33:09.000000000 +0200
++++ configure	2019-07-22 08:34:13.000000000 +0200
+@@ -20523,32 +20523,6 @@
  fi
  done
  
 -for ac_func in realpath
 -do :
--  ac_fn_cxx_check_func "$LINENO" "realpath" "ac_cv_func_realpath"
--if test "x$ac_cv_func_realpath" = xyes; then :
+-  ac_fn_cxx_check_func "\$LINENO" "realpath" "ac_cv_func_realpath"
+-if test "x\$ac_cv_func_realpath" = xyes; then :
 -  cat >>confdefs.h <<_ACEOF
 -#define HAVE_REALPATH 1
 -_ACEOF
 -
 -else
--  as_fn_error $? "The realpath function cannot be found." "$LINENO" 5
+-  as_fn_error \$? "The realpath function cannot be found." "\$LINENO" 5
 -fi
 -done
 -
 -for ac_func in select
 -do :
--  ac_fn_cxx_check_func "$LINENO" "select" "ac_cv_func_select"
--if test "x$ac_cv_func_select" = xyes; then :
+-  ac_fn_cxx_check_func "\$LINENO" "select" "ac_cv_func_select"
+-if test "x\$ac_cv_func_select" = xyes; then :
 -  cat >>confdefs.h <<_ACEOF
 -#define HAVE_SELECT 1
 -_ACEOF
 -
 -else
--  as_fn_error $? "The select function cannot be found." "$LINENO" 5
+-  as_fn_error \$? "The select function cannot be found." "\$LINENO" 5
 -fi
 -done
 -
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for working strtod" >&5
- $as_echo_n "checking for working strtod... " >&6; }
- if ${ac_cv_func_strtod+:} false; then :
+ { \$as_echo "\$as_me:\${as_lineno-\$LINENO}: checking for working strtod" >&5
+ \$as_echo_n "checking for working strtod... " >&6; }
+ if \${ac_cv_func_strtod+:} false; then :
+
 EOF
 
 # fix for building windows_monitor
