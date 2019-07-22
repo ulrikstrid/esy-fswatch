@@ -24,7 +24,6 @@
         "-c",
         "#{os == 'windows' ? './fix-libtools-windows.sh' : 'true'}"
       ],
-      "#{os == 'windows' ? 'sed -n -e \"s;(allow_undefined=)yes;$1no;\" libtool.bak > libtool' : 'true'}",
       "#{os == 'windows' ? 'make install-strip' : 'true'}",
       "make"
     ],
