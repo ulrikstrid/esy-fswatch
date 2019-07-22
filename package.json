@@ -21,7 +21,11 @@
         "--disable-dependency-tracking",
         "--disable-silent-rules"
       ],
-      "automake",
+      [
+        "bash",
+        "-c",
+        "#{os == 'windows' ? 'automake' : 'true'"
+      ],
       [
         "bash",
         "-c",
