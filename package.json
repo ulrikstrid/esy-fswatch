@@ -21,6 +21,7 @@
         "--disable-dependency-tracking",
         "--disable-silent-rules"
       ],
+      "automake",
       [
         "bash",
         "-c",
@@ -39,6 +40,9 @@
         "val": "#{self.install / 'fswatch'}",
         "scope": "global"
       }
+    },
+    "dependencies": {
+      "esy-automake": "esy-packages/esy-automake#924ced5"
     }
   }
 }
