@@ -9,16 +9,6 @@
         "-c",
         "#{os == 'windows' ? './prepare-windows.sh' : 'true'}"
       ],
-      [
-        "bash",
-        "-c",
-        "#{os == 'windows' ? 'autoreconf' : 'true'}"
-      ],
-      [
-        "bash",
-        "-c",
-        "#{os == 'windows' ? 'automake' : 'true'}"
-      ],
       "find ./ -exec touch -t 200905010101 {} +",
       "#{os == 'windows' ? 'touch README libfswatch/README libfswatch/README config/ltmain.sh config.h.in' : 'true'}",
       [
@@ -40,6 +30,10 @@
     "install": [
       "make install"
     ],
+    "buildEnv": {
+      "WINDOWS_AVAILABLE": "#{os == 'windows' ? 'yes' : 'no'}",
+      "CYGWIN_AVAILABLE": "#{os == 'windows' ? 'yes' : 'no'}"
+    },
     "exportedEnv": {
       "FSWATCH_INCLUDE_PATH": {
         "val": "#{self.install / 'include'}",
@@ -49,9 +43,6 @@
         "val": "#{self.install / 'fswatch'}",
         "scope": "global"
       }
-    },
-    "dependencies": {
-      "esy-automake": "esy-packages/esy-automake#924ced5"
     }
   }
 }
