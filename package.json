@@ -48,7 +48,7 @@
       }
     },
     "dependencies": {
-      "automake": "ulrikstrid/esy-automake#86f3581978723505b773e66a4e0147ef95919177",
+      "automake": "esy-packages/esy-automake#07f5888d9dcb4e4abbb6e5a62a8b418678706c15",
       "autoconf": "esy-packages/esy-autoconf#ea58671a08c7ebf89b0cebd41f4950ca67157b01"
     }
   }
