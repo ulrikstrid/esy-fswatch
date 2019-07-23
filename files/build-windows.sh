@@ -9,6 +9,6 @@ sed -e "s/USE_CYGWIN/USE_WINDOWS/" libfswatch/Makefile.bak > libfswatch/Makefile
  # fix building DLLs
  mv libtool libtool.bak &&
  sed -e "s/\(allow_undefined=\)yes/\1no/" libtool.bak > libtool &&
- echo build-install &&
- # make install-strip &&
+ make &&
+ make install-strip &&
  echo Success
