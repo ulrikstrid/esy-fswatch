@@ -48,6 +48,7 @@
       }
     },
     "dependencies": {
+      "automake": "esy-packages/esy-automake#924ced5508d15067bb71f2204a8a0cc342cf24cd",
       "autoconf": "esy-packages/esy-autoconf#ea58671a08c7ebf89b0cebd41f4950ca67157b01"
     }
   }
