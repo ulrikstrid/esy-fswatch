@@ -147,9 +147,11 @@ sed -e "s/USE_CYGWIN/USE_WINDOWS/" libfswatch/src/libfswatch/Makefile.am.bak > l
 # mv configure configure.bak &&
 # sed -e "s/CYGWIN_AVAILABLE/WINDOWS_AVAILABLE/" configure.bak > configure
 
+ACLOCAL="$(which aclocal)"
+
 echo configure
-( autoreconf -f -i -I m4 -I $MINGWPREFIX/share/aclocal || (
+( autoreconf -f -i -I m4 -I $ACLOCAL || (
   touch README libfswatch/README libfswatch/README config/ltmain.sh config.h.in &&
   automake -a -f -c &&
-  autoreconf -f -i -I m4 -I $MINGWPREFIX/share/aclocal
+  autoreconf -f -i -I m4 -I $ACLOCAL
 ))
