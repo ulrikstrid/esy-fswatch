@@ -113,10 +113,6 @@ grep -v "The select function cannot be found." configure.ac.bak3 > configure.ac
 mv libfswatch/src/libfswatch/Makefile.am libfswatch/src/libfswatch/Makefile.am.bak &&
 sed -e "s/USE_CYGWIN/USE_WINDOWS/" libfswatch/src/libfswatch/Makefile.am.bak > libfswatch/src/libfswatch/Makefile.am
 
-# echo "Changing CYGWIN_AVAILABLE to WINDOWS_AVAILABLE"
-# mv configure configure.bak &&
-# sed -e "s/CYGWIN_AVAILABLE/WINDOWS_AVAILABLE/" configure.bak > configure
-
 ACLOCAL="$(which aclocal)"
 
 echo $ACLOCAL
@@ -129,4 +125,5 @@ echo automake
 automake -a -f -c
 
 echo autoreconf
+autoreconf --help
 autoreconf -f -i -I m4 -I $ACLOCAL
