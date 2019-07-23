@@ -46,6 +46,9 @@
         "val": "#{self.install / 'fswatch'}",
         "scope": "global"
       }
+    },
+    "dependencies": {
+      "autoconf": "esy-packages/esy-autoconf#ea58671a08c7ebf89b0cebd41f4950ca67157b01"
     }
   }
 }

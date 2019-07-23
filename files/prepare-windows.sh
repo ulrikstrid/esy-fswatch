@@ -98,63 +98,61 @@ patch -ulbf libfswatch/src/libfswatch/c++/windows/win_paths.cpp << EOF
 EOF
 # fix missing file
 touch README.illumos
+
 # remove detection of realpath/regcomp/select
-# mv libfswatch/configure.ac libfswatch/configure.ac.bak &&
-# grep -v "realpath\|regcomp\|select" libfswatch/configure.ac.bak > libfswatch/configure.ac
-
-patch -lf << EOF
---- configure.back	2019-07-22 08:33:09.000000000 +0200
-+++ configure	2019-07-22 08:34:13.000000000 +0200
-@@ -20523,32 +20523,6 @@
- fi
- done
+# patch -lf << EOF
+# --- configure.back	2019-07-22 08:33:09.000000000 +0200
+# +++ configure	2019-07-22 08:34:13.000000000 +0200
+# @@ -20523,32 +20523,6 @@
+#  fi
+#  done
  
--for ac_func in realpath
--do :
--  ac_fn_cxx_check_func "\$LINENO" "realpath" "ac_cv_func_realpath"
--if test "x\$ac_cv_func_realpath" = xyes; then :
--  cat >>confdefs.h <<_ACEOF
--#define HAVE_REALPATH 1
--_ACEOF
--
--else
--  as_fn_error \$? "The realpath function cannot be found." "\$LINENO" 5
--fi
--done
--
--for ac_func in select
--do :
--  ac_fn_cxx_check_func "\$LINENO" "select" "ac_cv_func_select"
--if test "x\$ac_cv_func_select" = xyes; then :
--  cat >>confdefs.h <<_ACEOF
--#define HAVE_SELECT 1
--_ACEOF
--
--else
--  as_fn_error \$? "The select function cannot be found." "\$LINENO" 5
--fi
--done
--
- { \$as_echo "\$as_me:\${as_lineno-\$LINENO}: checking for working strtod" >&5
- \$as_echo_n "checking for working strtod... " >&6; }
- if \${ac_cv_func_strtod+:} false; then :
+# -for ac_func in realpath
+# -do :
+# -  ac_fn_cxx_check_func "\$LINENO" "realpath" "ac_cv_func_realpath"
+# -if test "x\$ac_cv_func_realpath" = xyes; then :
+# -  cat >>confdefs.h <<_ACEOF
+# -#define HAVE_REALPATH 1
+# -_ACEOF
+# -
+# -else
+# -  as_fn_error \$? "The realpath function cannot be found." "\$LINENO" 5
+# -fi
+# -done
+# -
+# -for ac_func in select
+# -do :
+# -  ac_fn_cxx_check_func "\$LINENO" "select" "ac_cv_func_select"
+# -if test "x\$ac_cv_func_select" = xyes; then :
+# -  cat >>confdefs.h <<_ACEOF
+# -#define HAVE_SELECT 1
+# -_ACEOF
+# -
+# -else
+# -  as_fn_error \$? "The select function cannot be found." "\$LINENO" 5
+# -fi
+# -done
+# -
+#  { \$as_echo "\$as_me:\${as_lineno-\$LINENO}: checking for working strtod" >&5
+#  \$as_echo_n "checking for working strtod... " >&6; }
+#  if \${ac_cv_func_strtod+:} false; then :
 
-EOF
+# EOF
 
 # fix for building windows_monitor
 mv libfswatch/src/libfswatch/Makefile.am libfswatch/src/libfswatch/Makefile.am.bak &&
 sed -e "s/USE_CYGWIN/USE_WINDOWS/" libfswatch/src/libfswatch/Makefile.am.bak > libfswatch/src/libfswatch/Makefile.am
 
- # fix for building windows_monitor
-mv libfswatch/src/libfswatch/Makefile libfswatch/src/libfswatch/Makefile.bak &&
-sed -e "s/USE_CYGWIN/USE_WINDOWS/" libfswatch/src/libfswatch/Makefile.bak > libfswatch/src/libfswatch/Makefile
+# echo "Changing CYGWIN_AVAILABLE to WINDOWS_AVAILABLE"
+# mv configure configure.bak &&
+# sed -e "s/CYGWIN_AVAILABLE/WINDOWS_AVAILABLE/" configure.bak > configure
 
-# fix for building windows_monitor
-mv libfswatch/Makefile libfswatch/Makefile.bak &&
-sed -e "s/USE_CYGWIN/USE_WINDOWS/" libfswatch/Makefile.bak > libfswatch/Makefile
+which automake
+which autoreconf
 
-echo "Changing CYGWIN_AVAILABLE to WINDOWS_AVAILABLE"
-mv configure configure.bak &&
-sed -e "s/CYGWIN_AVAILABLE/WINDOWS_AVAILABLE/" configure.bak > configure
-
-touch README libfswatch/README libfswatch/README config/ltmain.sh config.h.in
+echo configure &&
+( autoreconf -f -i -I m4 -I $MINGWPREFIX/share/aclocal || (
+  touch README libfswatch/README libfswatch/README config/ltmain.sh config.h.in &&
+  automake -a -f -c &&
+  autoreconf -f -i -I m4 -I $MINGWPREFIX/share/aclocal
+))
