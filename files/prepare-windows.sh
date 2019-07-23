@@ -109,6 +109,11 @@ grep -v "realpath" configure.ac.bak2 > configure.ac
 mv configure.ac configure.ac.bak3 &&
 grep -v "The select function cannot be found." configure.ac.bak3 > configure.ac
 
+mv configure.ac configure.ac.bak4 &&
+grep -v "AM_GNU_GETTEXT" configure.ac.bak4 > configure.ac
+mv configure.ac configure.ac.bak5 &&
+grep -v "AM_GNU_GETTEXT_VERSION" configure.ac.bak5 > configure.ac
+
 # fix for building windows_monitor
 mv libfswatch/src/libfswatch/Makefile.am libfswatch/src/libfswatch/Makefile.am.bak &&
 sed -e "s/USE_CYGWIN/USE_WINDOWS/" libfswatch/src/libfswatch/Makefile.am.bak > libfswatch/src/libfswatch/Makefile.am
