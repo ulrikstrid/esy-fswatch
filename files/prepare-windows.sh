@@ -149,9 +149,10 @@ sed -e "s/USE_CYGWIN/USE_WINDOWS/" libfswatch/src/libfswatch/Makefile.am.bak > l
 
 ACLOCAL="$(which aclocal)"
 
+echo $ACLOCAL
+
 echo configure
-( autoreconf -f -i -I m4 -I $ACLOCAL || (
-  touch README libfswatch/README libfswatch/README config/ltmain.sh config.h.in &&
-  automake -a -f -c &&
-  autoreconf -f -i -I m4 -I $ACLOCAL
-))
+
+touch README libfswatch/README libfswatch/README config/ltmain.sh config.h.in &&
+automake -a -f -c &&
+autoreconf -f -i -I m4 -I $ACLOCAL
