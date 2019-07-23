@@ -7,16 +7,6 @@ jobs:
 - job: ${{ parameters.host }}
   pool: ${{ parameters.pool }}
   steps:
-  - task: CacheBeta@0
-    displayName: Cache esy on Windows
-    inputs:
-      key: |
-        npm
-        $(Agent.OS)
-        esy@0.5.8
-        $(Build.SourcesDirectory)/esy.lock/index.json
-      path: C:\npm\prefix\node_modules
-      condition: eq(variables['Agent.OS'], "Windows_NT")
   - template: ./use-esy.yml
   - task: CacheBeta@0
     inputs:
@@ -38,7 +28,6 @@ jobs:
   - script: esy build --verbose
     displayName: 'Build test project'
     workingDirectory: test_dir
-    condition: ne(variables['Agent.OS'], "Windows_NT")
   - script: esy x fswatch --help
     displayName: 'Test if fswatch is installed'
     workingDirectory: test_dir
