@@ -11,6 +11,7 @@
         "-c",
         "#{os == 'windows' ? './prepare-windows.sh' : 'true'}"
       ],
+      "automake --version",
       "find ./ -exec touch -t 200905010101 {} +",
       [
         "./configure",
