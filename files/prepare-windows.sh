@@ -145,4 +145,7 @@ EOF
 mv libfswatch/src/libfswatch/Makefile.am libfswatch/src/libfswatch/Makefile.am.bak &&
 sed -e "s/USE_CYGWIN/USE_WINDOWS/" libfswatch/src/libfswatch/Makefile.am.bak > libfswatch/src/libfswatch/Makefile.am
 
+mv configure configure.bak &&
+sed -e "s/CYGWIN_AVAILABLE/WINDOWS_AVAILABLE/" configure.bak > configure
+
 touch README libfswatch/README libfswatch/README config/ltmain.sh config.h.in
