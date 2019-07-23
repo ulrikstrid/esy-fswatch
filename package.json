@@ -4,34 +4,10 @@
   "override": {
     "buildsInSource": true,
     "build": [
-      "echo $WINDOWS_AVAILABLE",
-      "echo $CYGWIN_AVAILABLE",
-      "automake --version",
       [
         "bash",
         "-c",
-        "#{os == 'windows' ? './prepare-windows.sh' : 'true'}"
-      ],
-      "find ./ -exec touch -t 200905010101 {} +",
-      [
-        "./configure",
-        "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}",
-        "#{os == 'windows' ? '--target=x86_64-w64-mingw32' : ''}",
-        "#{os == 'windows' ? 'CFLAGS=\"-DHAVE_WINDOW\"' : ''}",
-        "#{os == 'windows' ? 'CXXFLAGS=\"-DHAVE_WINDOWS\"' : ''}",
-        "--prefix=#{self.install}",
-        "--disable-dependency-tracking",
-        "--disable-silent-rules"
-      ],
-      [
-        "bash",
-        "-c",
-        "#{os == 'windows' ? './build-windows.sh' : 'make'}"
-      ],
-      [
-        "bash",
-        "-c",
-        "#{os == 'windows' ? 'true' : 'make install'}"
+        "#{os == 'windows' ? './all-windows.sh' : 'make'}"
       ]
     ],
     "buildEnv": {
