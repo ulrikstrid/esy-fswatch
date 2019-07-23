@@ -12,7 +12,6 @@
         "#{os == 'windows' ? './prepare-windows.sh' : 'true'}"
       ],
       "find ./ -exec touch -t 200905010101 {} +",
-      "#{os == 'windows' ? 'touch README libfswatch/README libfswatch/README config/ltmain.sh config.h.in' : 'true'}",
       [
         "./configure",
         "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}",

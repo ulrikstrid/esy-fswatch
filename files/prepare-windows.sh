@@ -145,6 +145,15 @@ EOF
 mv libfswatch/src/libfswatch/Makefile.am libfswatch/src/libfswatch/Makefile.am.bak &&
 sed -e "s/USE_CYGWIN/USE_WINDOWS/" libfswatch/src/libfswatch/Makefile.am.bak > libfswatch/src/libfswatch/Makefile.am
 
+ # fix for building windows_monitor
+mv libfswatch/src/libfswatch/Makefile libfswatch/src/libfswatch/Makefile.bak &&
+sed -e "s/USE_CYGWIN/USE_WINDOWS/" libfswatch/src/libfswatch/Makefile.bak > libfswatch/src/libfswatch/Makefile
+
+# fix for building windows_monitor
+mv libfswatch/Makefile libfswatch/Makefile.bak &&
+sed -e "s/USE_CYGWIN/USE_WINDOWS/" libfswatch/Makefile.bak > libfswatch/Makefile
+
+echo "Changing CYGWIN_AVAILABLE to WINDOWS_AVAILABLE"
 mv configure configure.bak &&
 sed -e "s/CYGWIN_AVAILABLE/WINDOWS_AVAILABLE/" configure.bak > configure
 
