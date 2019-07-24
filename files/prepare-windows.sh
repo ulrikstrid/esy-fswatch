@@ -99,22 +99,23 @@ EOF
 # fix missing file
 touch README.illumos
 
-# remove detection of realpath/regcomp/select
+echo "remove detection of realpath/regcomp/select"
 mv libfswatch/configure.ac libfswatch/configure.ac.bak &&
 grep -v "realpath\|regcomp\|select" libfswatch/configure.ac.bak > libfswatch/configure.ac
-# remove detection of realpath
+echo "remove detection of realpath"
 mv configure.ac configure.ac.bak2 &&
 grep -v "realpath" configure.ac.bak2 > configure.ac
-# remove detection of realpath
+echo "remove detection of realpath"
 mv configure.ac configure.ac.bak3 &&
 grep -v "The select function cannot be found." configure.ac.bak3 > configure.ac
 
+echo "Remove gettext stuff"
 mv configure.ac configure.ac.bak4 &&
 grep -v "AM_GNU_GETTEXT" configure.ac.bak4 > configure.ac
 mv configure.ac configure.ac.bak5 &&
 grep -v "AM_GNU_GETTEXT_VERSION" configure.ac.bak5 > configure.ac
 
-# fix for building windows_monitor
+echo "fix for building windows_monitor"
 mv libfswatch/src/libfswatch/Makefile.am libfswatch/src/libfswatch/Makefile.am.bak &&
 sed -e "s/USE_CYGWIN/USE_WINDOWS/" libfswatch/src/libfswatch/Makefile.am.bak > libfswatch/src/libfswatch/Makefile.am
 
@@ -130,5 +131,4 @@ echo automake
 automake -a -f -c
 
 echo autoreconf
-autoreconf --help
 autoreconf -f -i -I m4 -I $ACLOCAL
