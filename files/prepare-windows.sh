@@ -131,4 +131,4 @@ echo automake
 automake -a -f -c
 
 echo autoreconf
-autoreconf -f -i -I m4 -I $ACLOCAL
+autoreconf -f -i -I m4
