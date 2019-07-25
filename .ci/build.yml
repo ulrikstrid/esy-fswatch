@@ -12,6 +12,7 @@ jobs:
     inputs:
       key: |
         esy
+        esy-fswatch
         $(Agent.OS)
         ${{ parameters.ESY__CACHE_INSTALL_PATH }}
         $(Build.SourcesDirectory)/esy.lock/index.json
