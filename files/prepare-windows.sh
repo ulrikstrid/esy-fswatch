@@ -109,11 +109,11 @@ echo "remove detection of realpath"
 mv configure.ac configure.ac.bak3 &&
 grep -v "The select function cannot be found." configure.ac.bak3 > configure.ac
 
-echo "Remove gettext stuff"
-mv configure.ac configure.ac.bak4 &&
-grep -v "AM_GNU_GETTEXT" configure.ac.bak4 > configure.ac
-mv configure.ac configure.ac.bak5 &&
-grep -v "AM_GNU_GETTEXT_VERSION" configure.ac.bak5 > configure.ac
+# echo "Remove gettext stuff"
+# mv configure.ac configure.ac.bak4 &&
+# grep -v "AM_GNU_GETTEXT" configure.ac.bak4 > configure.ac
+# mv configure.ac configure.ac.bak5 &&
+# grep -v "AM_GNU_GETTEXT_VERSION" configure.ac.bak5 > configure.ac
 
 echo "fix for building windows_monitor"
 mv libfswatch/src/libfswatch/Makefile.am libfswatch/src/libfswatch/Makefile.am.bak &&
