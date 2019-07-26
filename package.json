@@ -26,11 +26,7 @@
         "-c",
         "#{os == 'windows' ? './build-windows.sh' : 'make'}"
       ],
-      [
-        "bash",
-        "-c",
-        "#{os == 'windows' ? 'true' : 'make install'}"
-      ]
+      "make install"
     ],
     "buildEnv": {
       "WINDOWS_AVAILABLE": "#{os == 'windows' ? 'yes' : 'no'}",
