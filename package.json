@@ -47,7 +47,7 @@
       }
     },
     "dependencies": {
-      "libtools": "ulrikstrid/esy-libtools#7801593e905267f86626e746d65bf412d22a99e0",
+      "libtools": "ulrikstrid/esy-libtools#60de5edce4c550c1660ef1b2f861b576cef2f73e",
       "gettext": "esy-packages/esy-gettext#4069a3333a079828afe7ba7935c1b400738d1f72",
       "automake": "ulrikstrid/esy-automake#10779a9ca0cb23e60fa619e1e0b5ed03b9c3e575",
       "autoconf": "esy-packages/esy-autoconf#ea58671a08c7ebf89b0cebd41f4950ca67157b01"
