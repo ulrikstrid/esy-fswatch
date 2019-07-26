@@ -1,6 +1,3 @@
 # fix building DLLs
 mv libtool libtool.bak &&
-sed -e "s/\(allow_undefined=\)yes/\1no/" libtool.bak > libtool &&
-make &&
-make install-strip &&
-echo Success
+sed -e "s/\(allow_undefined=\)yes/\1no/" libtool.bak > libtool

@@ -24,8 +24,9 @@
       [
         "bash",
         "-c",
-        "#{os == 'windows' ? './build-windows.sh' : 'make'}"
+        "#{os == 'windows' ? './build-windows.sh' : 'true'}"
       ],
+      "make",
       "make install"
     ],
     "buildEnv": {
