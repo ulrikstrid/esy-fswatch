@@ -8,15 +8,15 @@ jobs:
   pool: ${{ parameters.pool }}
   steps:
   - template: ./use-esy.yml
-  - task: CacheBeta@0
-    inputs:
-      key: |
-        esy
-        esy-fswatch
-        $(Agent.OS)
-        ${{ parameters.ESY__CACHE_INSTALL_PATH }}
-        $(Build.SourcesDirectory)/esy.lock/index.json
-      path: ${{ parameters.ESY__CACHE_INSTALL_PATH }}
+  # - task: CacheBeta@0
+  #   inputs:
+  #     key: |
+  #       esy
+  #       esy-fswatch
+  #       $(Agent.OS)
+  #       ${{ parameters.ESY__CACHE_INSTALL_PATH }}
+  #       $(Build.SourcesDirectory)/esy.lock/index.json
+  #     path: ${{ parameters.ESY__CACHE_INSTALL_PATH }}
   - script: mkdir -p test_dir
     displayName: 'make test dir'
   - bash: |
