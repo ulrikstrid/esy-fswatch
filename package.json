@@ -16,7 +16,7 @@
         "#{os == 'windows' ? '--target=x86_64-w64-mingw32' : ''}",
         "#{os == 'windows' ? 'CFLAGS=\"-DHAVE_WINDOW\"' : ''}",
         "#{os == 'windows' ? 'CXXFLAGS=\"-DHAVE_WINDOWS\"' : ''}",
-        "--prefix=#{self.install}",
+        "--prefix=$cur__install",
         "--disable-dependency-tracking",
         "--disable-silent-rules",
         "--disable-nls"
