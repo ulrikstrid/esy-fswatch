@@ -1,0 +1,243 @@
+/* libfswatch_config.h.in.  Generated from configure.ac by autoheader.  */
+
+/* Define to 1 if translation of program messages to the user's native
+   language is requested. */
+#undef ENABLE_NLS
+
+/* Define to 1 if you have the `atexit' function. */
+#undef HAVE_ATEXIT
+
+/* Define to 1 if you have the Mac OS X function CFLocaleCopyCurrent in the
+   CoreFoundation framework. */
+#undef HAVE_CFLOCALECOPYCURRENT
+
+/* Define to 1 if you have the Mac OS X function CFPreferencesCopyAppValue in
+   the CoreFoundation framework. */
+#undef HAVE_CFPREFERENCESCOPYAPPVALUE
+
+/* Define to 1 if you have the <CoreServices/CoreServices.h> header file. */
+#undef HAVE_CORESERVICES_CORESERVICES_H
+
+/* Define to 1 if you have the <cstdlib> header file. */
+#undef HAVE_CSTDLIB
+
+/* define if the compiler supports basic C++11 syntax */
+#undef HAVE_CXX11
+
+/* Define if <atomic> is available. */
+#undef HAVE_CXX_ATOMIC
+
+/* Define if <mutex> is available. */
+#undef HAVE_CXX_MUTEX
+
+/* Define if the thread_local storage specified is available. */
+#undef HAVE_CXX_THREAD_LOCAL
+
+/* Define if std::unique_ptr in <memory> is available. */
+#undef HAVE_CXX_UNIQUE_PTR
+
+/* CygWin API present. */
+#undef HAVE_CYGWIN
+
+/* Define if the GNU dcgettext() function is already present or preinstalled.
+   */
+#undef HAVE_DCGETTEXT
+
+/* Define to 1 if you have the declaration of `cygwin_create_path', and to 0
+   if you don't. */
+#undef HAVE_DECL_CYGWIN_CREATE_PATH
+
+/* Define to 1 if you have the declaration of `FindCloseChangeNotification',
+   and to 0 if you don't. */
+#undef HAVE_DECL_FINDCLOSECHANGENOTIFICATION
+
+/* Define to 1 if you have the declaration of `FindFirstChangeNotification',
+   and to 0 if you don't. */
+#undef HAVE_DECL_FINDFIRSTCHANGENOTIFICATION
+
+/* Define to 1 if you have the declaration of `FindNextChangeNotification',
+   and to 0 if you don't. */
+#undef HAVE_DECL_FINDNEXTCHANGENOTIFICATION
+
+/* Define to 1 if you have the declaration of `inotify_add_watch', and to 0 if
+   you don't. */
+#undef HAVE_DECL_INOTIFY_ADD_WATCH
+
+/* Define to 1 if you have the declaration of `inotify_init', and to 0 if you
+   don't. */
+#undef HAVE_DECL_INOTIFY_INIT
+
+/* Define to 1 if you have the declaration of `inotify_rm_watch', and to 0 if
+   you don't. */
+#undef HAVE_DECL_INOTIFY_RM_WATCH
+
+/* Define to 1 if you have the declaration of `kevent', and to 0 if you don't.
+   */
+#undef HAVE_DECL_KEVENT
+
+/* Define to 1 if you have the declaration of `kqueue', and to 0 if you don't.
+   */
+#undef HAVE_DECL_KQUEUE
+
+/* Define to 1 if you have the declaration of `port_create', and to 0 if you
+   don't. */
+#undef HAVE_DECL_PORT_CREATE
+
+/* Define to 1 if you have the declaration of `ReadDirectoryChangesW', and to
+   0 if you don't. */
+#undef HAVE_DECL_READDIRECTORYCHANGESW
+
+/* Define to 1 if you have the declaration of `WaitForSingleObject', and to 0
+   if you don't. */
+#undef HAVE_DECL_WAITFORSINGLEOBJECT
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#undef HAVE_DLFCN_H
+
+/* Define to 1 if you have the <fcntl.h> header file. */
+#undef HAVE_FCNTL_H
+
+/* Define if the file events are supported by OS X FSEvents API. */
+#undef HAVE_FSEVENTS_FILE_EVENTS
+
+/* Define to 1 if you have the <getopt.h> header file. */
+#undef HAVE_GETOPT_H
+
+/* Define to 1 if you have the `getopt_long' function. */
+#undef HAVE_GETOPT_LONG
+
+/* Define if the GNU gettext() function is already present or preinstalled. */
+#undef HAVE_GETTEXT
+
+/* Define if you have the iconv() function and it works. */
+#undef HAVE_ICONV
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* Define to 1 if you have the `c' library (-lc). */
+#undef HAVE_LIBC
+
+/* Define to 1 if you have the `pthread' library (-lpthread). */
+#undef HAVE_LIBPTHREAD
+
+/* Define to 1 if you have the <memory.h> header file. */
+#undef HAVE_MEMORY_H
+
+/* Define to 1 if you have the `modf' function. */
+#undef HAVE_MODF
+
+/* Define to 1 if you have the <port.h> header file. */
+#undef HAVE_PORT_H
+
+/* Define to 1 if you have the `realpath' function. */
+#undef HAVE_REALPATH
+
+/* Define to 1 if you have the `select' function. */
+#undef HAVE_SELECT
+
+/* Define to 1 if you have the `setlocale' function. */
+#undef HAVE_SETLOCALE
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define to 1 if `st_mtime' is a member of `struct stat'. */
+#undef HAVE_STRUCT_STAT_ST_MTIME
+
+/* Define to 1 if `st_mtimespec' is a member of `struct stat'. */
+#undef HAVE_STRUCT_STAT_ST_MTIMESPEC
+
+/* Define to 1 if you have the <sys/cygwin.h> header file. */
+#undef HAVE_SYS_CYGWIN_H
+
+/* Define to 1 if you have the <sys/event.h> header file. */
+#undef HAVE_SYS_EVENT_H
+
+/* Define to 1 if you have the <sys/inotify.h> header file. */
+#undef HAVE_SYS_INOTIFY_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* Define to 1 if you have the <unordered_map> header file. */
+#undef HAVE_UNORDERED_MAP
+
+/* Define to 1 if you have the <unordered_set> header file. */
+#undef HAVE_UNORDERED_SET
+
+/* Windows API present. */
+#undef HAVE_WINDOWS
+
+/* Define to 1 if you have the <windows.h> header file. */
+#undef HAVE_WINDOWS_H
+
+/* Define to 1 if the system has the type `_Bool'. */
+#undef HAVE__BOOL
+
+/* Define to 1 if `lstat' dereferences a symlink specified with a trailing
+   slash. */
+#undef LSTAT_FOLLOWS_SLASHED_SYMLINK
+
+/* Define to the sub-directory where libtool stores uninstalled libraries. */
+#undef LT_OBJDIR
+
+/* Name of package */
+#undef PACKAGE
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef PACKAGE_TARNAME
+
+/* Define to the home page for this package. */
+#undef PACKAGE_URL
+
+/* Define to the version of this package. */
+#undef PACKAGE_VERSION
+
+/* Define to 1 if you have the ANSI C header files. */
+#undef STDC_HEADERS
+
+/* Version number of package */
+#undef VERSION
+
+/* Define for Solaris 2.5.1 so the uint32_t typedef from <sys/synch.h>,
+   <pthread.h>, or <semaphore.h> is not used. If the typedef were allowed, the
+   #define below would cause a syntax error. */
+#undef _UINT32_T
+
+/* Define to `int' if <sys/types.h> does not define. */
+#undef mode_t
+
+/* Define to `unsigned int' if <sys/types.h> does not define. */
+#undef size_t
+
+/* Define to `int' if <sys/types.h> does not define. */
+#undef ssize_t
+
+/* Define to the type of an unsigned integer type of width exactly 32 bits if
+   such a type exists and the standard includes do not define it. */
+#undef uint32_t

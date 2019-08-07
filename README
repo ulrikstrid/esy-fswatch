@@ -1,10 +1,3 @@
-# esy-fswatch
-
-[![Build Status](https://dev.azure.com/strid/OSS/_apis/build/status/ulrikstrid.esy-fswatch?branchName=master)](https://dev.azure.com/strid/OSS/_build/latest?definitionId=31&branchName=master)
-
-[fswatch](https://github.com/emcrisostomo/fswatch) packaged for [esy](https://esy.sh)
-
-
 [![License](https://img.shields.io/badge/license-GPL--3.0-blue.svg?style=flat)](https://github.com/emcrisostomo/fswatch/blob/master/COPYING)
 [![Build Status](https://travis-ci.org/emcrisostomo/fswatch.svg?branch=master)](https://travis-ci.org/emcrisostomo/fswatch)
 

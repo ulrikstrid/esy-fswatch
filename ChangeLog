@@ -1,0 +1,1174 @@
+ChangeLog
+*********
+
+This file has been automatically generated using the following command:
+
+    $ git log --oneline --decorate
+
+18aacf1 (HEAD -> master, origin/master, origin/HEAD) Update history in library documentation
+48334f7 Bump libfswatch:11:1:0
+1f52bc9 Update NEWS for 1.14.0
+fa244f2 Update NEWS.libfswatch for 1.14.0
+622310b Update NEWS.libfswatch for 1.13.0
+dae9202 (tag: 1.14.0) Update po and pot files
+17d9df4 Update CLion files
+db120c4 Bump 1.14.0
+469cb73 Fix bug in create_monitor ignoring monitor type
+1ee493b Add travis build status to README.md
+f5c0504 Update .travis.yml to use xenial
+cd4e00a Refactor code to reduce nesting
+6421dcd Add fsw_realpath and use std::string instead of char *
+10c3a02 Add dist/ to .gitignore
+2b810f0 Bump copyright
+33ab177 Require at least GCC v. 4.9 (only when GCC is detected)
+001d900 Add Autoconf macros to compare version numbers
+50dae81 Add Autoconf macros to detect the C++ compiler vendor and version
+a0044eb Update Autoconf macros
+8a3d528 Forward the doxygen target to dependent Makefile
+d5d2ea8 (tag: 1.13.0) 1.13.0
+a72d2da (origin/remove-dynamic-registration) Conditionally import monitor headers
+619f7f9 Remove unused methods
+f55030d Move argument to forwarded method
+328d3b1 Remove unused type
+9aa15f0 Refactor factory logic
+35d1d2f Fix missing imports
+d322675 Move function into monitor_factory
+2452f93 Fix missing imports
+9c51177 Refactor and add imports
+d7ca79a Update build files to add monitor_factory
+a19945c Extract monitor_factory to separate file
+0e7fa7b Remove functions to dynamically register monitor constructors
+18ae27c Remove functions to dynamically register monitor constructors
+1a22702 Remove the dynamic monitor registrant
+24f219e Reorganize program checks
+a27522f Check for makeinfo and selectively enable TEXINFO targets
+542ed07 1.13.0-develop
+6204011 (tag: 1.12.0) 1.12.0
+2cca60a Update ax_cxx_compile_stdcxx.m4
+66fdd08 Remove intermediate Makefile.am with only SUBDIR statements
+44bafcb Use target_include_directories instead of include_directories
+670a087 Update pot and po files
+ec12ce0 Update NEWS.libfswatch
+65f055b Rogue pointer was returned in exception what()
+6f36e9d Add .idea/shelf to .gitignore
+243ffa0 Fix signal handler signature
+23be7f9 Revert "Register signal handlers using std::signal instead of sigaction"
+7f2409b Register signal handlers using std::signal instead of sigaction
+0d951fb Refactor to use C++11 constructs when possible
+7ccf245 Clean up code
+9e2b10a Clean up code to use C++11 constructs
+dadc486 Remove usages of namespace std in poll_monitor.cpp
+25fabf7 Remove usages of namespace std in kqueue_monitor.cpp
+daeee13 Use std::string operator== instead of compare() to check strings for equality
+7656dcf Remove dead code after migrating to <regex>
+b04d0ed Do not scan a directory tree if the directory name is excluded by filters
+3031a01 Use std::string operator== instead of compare() to check strings for equality
+5820c23 Use std::regex_search instead of std::regex_match for backwards compatibility
+3813bc9 Fix typo
+1aef298 Remove usages of namespace std in inotify_monitor.cpp
+b469557 Remove usages of namespace std in inotify_monitor.cpp
+4413178 Improve error messages by printing message and status code when libfsw_exception is caught
+b095ab5 Remove usages of namespace std in monitor.cpp
+0be684b Fix bug in directory watching code in the inotify_monitor
+58cf0b6 Remove usages of namespace std in fswatch.cpp
+d265855 Fix issue 178: Migrate usages of POSIX regular expressions (<regex.h>) to the C++11 regex library (<regex>).
+cb83c23 Remove usage of namespace std
+d5592f8 Clean up sources
+29f3135 Use == instead of compare when comparing string for equality
+03efb44 Use ctime instead of time.h
+03a0ce7 Refactor to use C++11 idioms
+c60f701 Bump 1.12.0-develop
+f6c7cbd (tag: 1.11.3) Update history
+37a2b03 Update NEWS files
+2268d6c Update po and pot files
+8442047 Bump 1.11.3
+7bc72ae Update copyright
+7ffe36f Delete FSEventStreamContext after stream has been created
+eab90e9 Use move semantics when invoking monitor constructor
+82af669 Improve formatting
+5b8f3cc Add support for the darwin.eventStream.noDefer custom property of the fsevents monitor
+65b03ce Use find_first_of(char)
+e8faea8 Use emplace_back
+f41e67a Remove non overridden virtual destructor
+02f9f1f Make deleted members public
+ca08113 Update the CLion project to use a right margin of 80 columns
+84ee892 Update ax_cxx_compile_stdcxx.m4
+ce91bbe Fix incorrect configure check for date (1) flavour
+91e529e Update git ignore patterns
+6e68296 Add CLion code styles
+847b334 Install gettext from the Debian package instead of building it from source
+0a9dcec Update ax_prog_date with the current version in the autoconf archive
+c7d8949 Amend release notes for 1.11.2
+a52d2f3 Fix typo
+395548e Refactor usage of AX_PROG_DATE
+b357e3e Add check for date -v arg and set ax_cv_prog_date_bsd_adjust
+2882930 Rename to AX_PROG_DATE
+a043234 Add ax_cv_date_type variable to AX_DATE
+acad38f Update NEWS and NEWS.libfswatch
+865a821 Refactor configure.ac to use AX_DATE
+5146d36 Add ax_date.m4 to check date (1) capabilities
+bf02a91 Update NEWS
+f0e7bf8 Update NEWS
+2694c7f Bump 1.12.0-develop
+f019188 Merge pull request #192 from lamby/reproducible-build
+4828984 Make the build reproducible.
+862f98e Modernize syntax to C++11
+275e154 Merge branch 't3hk0d3-fix_issues'
+a6e5d32 Merge branch 'fix_issues' of https://github.com/t3hk0d3/fswatch into t3hk0d3-fix_issues
+8b842cc Merge branch 't3hk0d3-fix_fsevents_stop'
+684f8ff Fix stop sequence for FSEvents monitor
+9ca4b55 Homogeneize code style
+44a61df Improve method description
+8b8f8dc Merge pull request #189 from t3hk0d3/check_is_running
+fe48b4c Add C API method to check that monitor is running
+fc70830 Fix segfault when starting monitor
+2705341 Fix session memory is not actually being freed
+8772f7f Fix C99 compatibility in cevent.h
+db65c38 Add Dockerfile of new alpine image to output files
+afc186d Add file
+8637448 Add alpine image with no gettext
+2875be8 (tag: 1.11.2) Update history
+16ecbc0 Update NEWS files
+c7b0f7b Update po and pot files
+1240a71 Bump 1.11.2
+480bdac Update po files
+aa2a32f Update po and pot files
+645711c Reconfigure output files after moving po directories
+cc65d61 Remove po subdir from fswatch and libfswatch Makefiles
+f7012b5 Update po/Makevars after location change
+24a81fb Move fswatch po directory to package root
+6a1893d Remove libfswatch/po
+d75e89a Merge po and pot files
+0e9261a Merge POTFILES.in
+abfe0cc (tag: 1.11.1) Update po and pot files
+a810f46 Bump 1.11.1
+36f01b8 Refactor and substitute manual path tests with EMC_PATH_PROG
+e412c4e Add option to enable the generation of docker files for test containers
+05823d3 Refactor after changes to EMC_PATH_PROG
+08e9932 Refactor to avoid using magic values when checking the result of AC_PATH_PROG
+13a962b Reformat
+07fd8ae Refactor ax_git_current_branch to use m4sh
+666077e (tag: 1.11.0) Update po and pot files
+23c94ca Update change history
+3a93035 Update the manual to update the behaviour of the --event option
+2c0c8f3 Refactor to use constants
+4fa5249 Build documentation and copy it to the dist directory
+97d2cc4 Update the build-from-scratch.sh
+55c0672 Add build-from-scratch.sh
+9033554 Update gettext.h
+0659c70 Update NEWS
+092f15b Merge branch 'master' into release/1.11.0
+9678505 Merge branch 'master' into feature/issue-174-event-with-bitmask
+1725945 Update README
+a9591d2 Bump 1.11.0
+049cb20 Only use a COPYING file for license
+014c20d Copy COPYING over LICENSE
+8b3ae3f Link LICENSE to COPYING
+eeb457a Update CONTRIBUTING.md to reflect changes to the branch structure
+3ff3806 Merge branch 'develop'
+d97954e Recursively build the po subdirectory only if NLS is enabled
+f116447 Distribute ABOUT-NLS only if NLS is enabled
+f0cb6dd Add an automake conditional to check whether NLS is enabled
+659a2a4 Use one dist_doc_DATA statement per file
+9166e53 Reorder options in usage message
+0fa6d20 Bump copyright year
+7040d86 Merge branch 'master' of github.com:emcrisostomo/fswatch into feature/issue-174-event-with-bitmask
+3a2510a Add copy constructor and assignment operator
+88cacb8 Merge pull request #159 from nickmccurdy/hotfix-wording
+4b35480 Overload --event to accept a bitmask
+d655777 Add array with all event types
+9397784 Update code style settings
+3ada000 Require C++11 using the new CMAKE_CXX_STANDARD instead of CMAKE_CXX_FLAGS
+f52783e Define HAVE_CONFIG_H in each project
+93f1dbf Bump minimum cmake to 3.8
+cd657a2 Merge branch 'master' into develop
+dcf019f Add GNU gettext to the list of the development dependencies
+7524f19 Update pot files
+85ab057 Update ax_ macros
+a496e8b Update ax macros
+c91b5b1 Merge tag '1.10.1' into develop
+529c7e8 (tag: 1.10.1) Merge branch 'hotfix/1.10.1'
+f70fe73 Update Texinfo documentation
+42fa6b7 Bump 1.11.0-develop
+a4c426e Merge tag '1.10.0' into develop
+bd58735 (tag: 1.10.0) Merge branch 'release/1.10.0'
+ca955e8 Update NEWS
+cde73f1 Rename debian-9 to debian9
+56dfdf9 Update .gitignore to add debian-9/Dockerfile
+61737a1 Use debian:9 when testing debian builds
+b83d832 Update INSTALL
+dfd42de Update man page description
+a4063de Fix wording for monitor list
+89ad43f Update NEWS
+c70394c Update NEWS files
+7762f80 Strengthen memory ordering
+4825273 Fix build-images.sh
+6bbbccf Refactor docker files to get git branch name from the configuration
+2fb13f6 Set branch to HEAD if detached
+9694a86 Clean up docker files
+a2b0079 Get the current git branch
+636a22e Add M4 macro to get the current git branch
+1e2a2a3 Build fswatch on Docker images
+2436e04 Merge branch 'release/1.10.0' of github.com:emcrisostomo/fswatch into release/1.10.0
+d440a3d Clean up Alpine Dockerfile
+e11d16b Merge pull request #145 from agaida/release/1.10.0
+610628b Merge pull request #147 from agaida/fix-license
+57da3cd Merge pull request #148 from agaida/fix-manpage
+8ff8eff Fix manpage generation
+09ce586 Fix license text
+804ab6f Added basic .gitattributes to prevent the export of: - .gitignore - .gitattributes - .idea/ - .travis.yml - .*~
+177614f Update Doxygen documentation
+22d0a48 Add cmake-build-debug/ to .gitignore
+7f768b6 Bump libfswatch 9:0:0
+f4ee4fd Refactor code after FSW_HANDLE redefinition
+cd15c60 Update FSW_HANDLE to be FSW_SESSION *
+bb38ff9 Add fswatch_test binary to .gitignore
+ba5a6e8 Add test compilation of a C program against the libfswatch library
+ae48ea8 Update NEWS files
+80db165 Add fsw_stop_monitor function to stop a running monitor. A session with a running monitor cannot be destroyed any longer.
+28d1134 Update include directory after package refactoring
+e70cfc6 Update po and pot files
+9bfac0f Fix index
+6ad0abb Update version history in Texinfo documentation
+5181aa2 Update Texinfo documentation
+93c61a3 Bump 1.10.0
+2f2763e Merge branch 'feature/merge-projects' into develop
+9c7cfd5 Update README.md
+05b9874 Update AUTHORS.libfswatch
+8b2c038 Remove libtool dependencies from child Makefile
+fee0ede Remove dist hook from Makefile in child project
+b8042ab Remove ChangeLog, INSTALL and README from child project
+03732fc Update po and pot files
+88eaf0d Rename root package to fswatch
+26584da Rename pot files to fswatch.pot
+b680da5 Move libfswatch README files to the project root
+a0af954 Update copyright
+e014579 Update po and pot files
+5061858 Add docker-images target to build Docker images
+f8420bd Add script to build Docker images
+f474168 Fix paths in CMakeLists.txt after refactoring
+fb332f6 Fix paths in .gitignore after refactoring
+e5433e6 Fix paths in Doxyfile.in after refactoring
+cd751ff Update po and pot files
+6395745 Fix paths in po/POTFILES.in after refactoring
+a5a2cba Fix paths in po/Makevars after refactoring
+d578464 Update fswatch Makefile to recurse into po and doc subdirs
+8282c5b Update paths in POTFILES.in after refactoring
+0ff74ee Fix .gitignore paths after refactoring
+8a2a1e9 Fix config header path after refactoring
+7f8ba12 Update paths in .gitignore
+c44f474 Update po/Makevars
+a23fc5f Add fswatch/Makefile.am
+f2a21e1 Fix paths in configure.ac after refactoring
+85152bf Update root Makefile
+b18e538 Merge libfswatch's and fswatch's configure.ac
+bd723a6 Consolidate M4 macros into a shared directory
+afc2c9d Move doc and po to fswatch
+52d14e1 Move fswatch to root
+9f8403b Move fswatch sources to src/fswatch/src
+2883062 Unlock session mutex before starting the monitor
+7c9f2e6 Refactor to improve readability
+fc6402a Add Docker files for Alpine and Debian Linux
+100b075 Merge branch 'hotfix/1.9.3' into develop
+11ebf02 (tag: 1.9.3) Merge branch 'hotfix/1.9.3'
+c1d9895 Update po and pot files
+57084d1 Update NEWS
+71c1c3d Remove stale comment
+a08d5f1 Merge pull request #124 from johndid/hotfix/1.9.3
+f9222ae Fixed headers for c compilation
+28b8998 Update NEWS.
+de24a48 Substitute C++ header names with C names in C headers.
+895b901 Bump 1.9.3.
+c556ebd Move filters parsed from file into filter vector instead of copying them.
+a1e992a Pass const string by reference.
+b75d793 Rewrap.
+0be9d5c Update po and pot files.
+2122224 Set correct case sensitivity.
+7b25e7c Handle invalid_argument exceptions in main().
+3b7ff7b Improve exception message when filter file cannot be opened.
+8d9cd5f Add option to load filters from files.
+3d737cb Provide a default value for the error handler of the filter parser.
+69b5a24 Add doxygen documentation.
+68dd90f Inline static functions.
+fcc32cb Read filters from file.
+3abd16a Merge tag '1.9.2' into develop
+a79113a (tag: 1.9.2) Merge branch 'hotfix/1.9.2'
+aed6b7a Update texinfo documentation.
+dfed4fe Bump libtool 8:0:2.
+e7d2e97 Update po and pot files.
+c422884 Update news.
+a320837 Add a mutex to protect the notify_events() method.
+bc371e2 Fix missing #ifdef.
+22fbeb1 Invoke close_monitor() instead of exit() after processing the first events and -1 was used.
+ba0fa1a Bump 1.9.2.
+83054a2 Merge tag '1.9.1' into develop
+cb046d2 (tag: 1.9.1) Merge branch 'hotfix/1.9.1'
+160875f Update PO and POT files for 1.9.1.
+72b981a Update Texinfo documentation.
+75c7769 Update NEWS.
+d3af2e5 Bump libfswatch API version to 7:0:1.
+933aafc Bump 1.9.1.
+ec332db Bump 1.10.0-develop.
+ef7260c Bump 1.10.0.develop.
+1bbb077 Merge tag '1.9.0' into develop
+be03582 (tag: 1.9.0) Merge branch 'release/1.9.0'
+c364399 Update NEWS.
+8d5c3a8 Update documentation.
+a00bdbe Update copyright statement for 1.9.0.
+e1ffb0a Update PO and POT files for 1.9.0.
+153284b Update CLion project files.
+be7ae7c Update README for 1.9.0.
+834853a Update README for 1.9.0.
+fffd2fd Update copyright on configure.ac for 1.9.0.
+1889524 Update NEWS for 1.9.0.
+6bd8d7c Update Texinfo documentation for 1.9.0.
+1a67f25 Bump 1.9.0.
+8091f20 Update ax_cxx_compile_stdcxx series of macro.
+f114b2a Update PO and POT files.
+b2acd97 Do not print an error message if port_get() is interrupted by a signal.
+be4f319 Issue 114: fswatch (inotify) does not track newly created dirs recursively
+26b3400 Link against pthread if available.
+7a2accf Update.
+8f219c3 Move variable into inner scope.
+ff14906 Check for <atomic> support.
+78bb204 Check for <atomic> support.
+2e93863 Add missing header: <atomic>.
+a9911f4 Update macros to check for C++11 support and set the correct compiler flags.
+1bd5bba Add check for the availability of std::atomic.
+bbe5d83 Merge branch 'feature/inactivity-notification' into develop
+75b6325 Add --fire-idle-events option to fswatch.
+59dbc70 Add fsw::monitor::set_fire_idle_event() to enable idle events.
+2945640 Do not exit() from signal handler: stop monitor and wait for it to stop.
+8b5c6f7 Update inactivity callback to sleep a maximum time of 2 seconds.
+21a5942 Refactor inactivity callback and make it sleep 10% more than latency.
+394b31c Do not fail if kevent() is interrupted by a signal.
+0222cec Move inactivity thread to fsw::monitor and refactor fsw::fsevents_monitor.
+16ffbe7 Refactor to use monitor::notify_events instead of using a mutex of its own.
+33b1e93 Protect access to monitor::notify_events() using monitor::run_mutex.
+8a7a1b2 Improve logging.
+98699a3 Run a separate thread to forge an inactivity event.
+650f4b9 Close resources in monitor::on_stop() and clean up destructor.
+d7aea67 Update monitor::~monitor() to invoke monitor::stop().
+e7cab20 Travis CI: Use clang++-3.7.
+3f8e13b Travis CI: Use Trusty while building and required sudo.
+3e03d8b Enable builds on develop.
+ab4e5b7 Only build master branch on Travis CI.
+58e5e74 Bump 1.9.0-develop.
+10f6437 Merge tag '1.8.0' into develop
+cda2487 (tag: 1.8.0) Merge branch 'release/1.8.0'
+21db940 Remove texinfo documentation of libfswatch (obsoleted by Doxygen documentation).
+d9bd682 Do not manually distribute config.rpath.
+91f1629 Update po and pot files.
+1f41249 Include doxygen subdirectory in SUBDIRS so that Makefile.am is distributed.
+d2fb73d Bump 1.8.0
+b42c928 Update NEWS.
+e73991d Update copyright statement.
+796c563 Fix missing header.
+6679f6d Update documentation and remove unused status codes.
+fc6fea1 Merge branch 'feature/doxygen-support' into develop
+7120d4d Update documentation.
+3b4b600 Update documentation.
+bc6938b Invoke the Doxygen generation target during all.  Do not descend into the doxygen directory during normal builds.
+0c6a1c7 Do not execute doxygen targets during all.
+357ce6d Update documentation.
+32c2823 Update documentation.
+3ac437f Update documentation.
+fc42131 Remove libfswatch_mem.{h, cpp}.
+4a9b516 Add Doxygen documentation for cmonitor.h.
+5c82e6d Update documentation.
+2b5b75a Update documentation.
+c839fc3 Update documentation.
+63e04ec Update documentation.
+0911cac Move constructor parameters instead of copy-constructing them.
+620844d Add example to Doxygen C++ API page.
+e5556a1 Add "C API" Doxygen page.
+dd0b13d Update documentation.
+c175b60 Generate Doxygen documentation from libfswatch_types.h.
+fea506a Update documentation.
+42234fe Add Path Filter page to Doxygen documentation.
+537596f Generate Doxygen documentation from filter.hpp.
+914f3c7 Format code using Markdown syntax.
+99f3538 Add ignore pattern for Doxygen's output directories: html/ and latex/.
+8b906e9 Update documentation.
+c4eeea2 Update the changelog page.
+36553ea Generate Doxygen documentation from event.hpp.
+2ce4c8c Generate Doxygen documentation from cfilter.h.
+693c2da Update documentation.
+f991368 Generate Doxygen documentation from libfswatch.h.
+d156773 Generate Doxygen documentation from libfswatch_log.h.
+ff5b5f0 Add a history page containing an API changelog.
+d754d93 Update documentation.
+7ffbb7e Merge branch 'develop' into feature/doxygen-support
+abaa9aa Refine thread-safety warning when a missing requirement affects only the C API.
+fb17e90 Update documentation.
+8464d36 Update documentation.
+3e55a4a Merge branch 'feature/doxygen-support' of github.com:emcrisostomo/fswatch into feature/doxygen-support
+98de813 Update documentation.
+1b705f3 Update documentation.
+c4d9884 Update documentation.
+876a377 Update documentation.
+3d89252 Update documentation.
+6cc594b Change signature to monitor::set_properties(const std::map<string, string>) so that parameter can be moved into field.
+6e67d6a Remove unnecessary call from destructor.
+6d0133b Update documentation.
+b15becd Update documentation.
+281c37b Update Doxyfile.in:
+6d29b4f Merge branch 'develop' into feature/doxygen-support
+5facbd4 Merge branch 'feature/monitor-stop' into develop
+caaf8e6 Fix bug: port_get returns error in errno.
+5e17511 Fix bug using timespec_t.
+d369c32 Add support for monitor::stop() to fen_monitor.
+8195985 Add support for monitor::stop() to windows_monitor.
+877bfe1 Add support for monitor::stop() to poll_monitor.
+a1da571 Move code that doesn't need to be repeated outside the loop.
+1a34b47 Add support for monitor::stop() to inotify_monitor.
+36562a8 Add support for monitor::stop() to kqueue_monitor.
+4c107ce Let monitor::start() do nothing if monitor is already running.
+4617e68 Allow monitor::stop() to be invoked on any monitor state.
+4b1e1ac Add monitor::is_running();
+edcd94e Stop the monitor before deleting it.
+83642b3 Initial stop() implementation for the fsevents_monitor.
+44184b6 Add a stop() method to the monitor class to allow for cooperative monitor shutdown.
+0e17594 Update CLion code-style settings.
+a76a61d Update documentation.
+996adfd Update documentation.
+17fdc63 Merge branch 'develop' into feature/doxygen-support
+4d43be6 Update fsw_get_event_flag_by_name so that it does not throw exceptions.
+37bb2d0 Move common types to libfswatch_types.h.
+351b0fb Update main Doxygen page.
+35f5115 Add documentation.
+e04ac7d Add command ALIAS for @license.
+48f273c Create Doxygen documentation on all-local.
+6686415 Remove make target from main Makefile.
+b6d5d8a Add Makefile.am for Doxygen documentation.
+795648b Organize documentation by type.
+ff51c3d Remove Doxygen configuration for fswatch.
+63e88f2 Add Doxyfile for libfswatch and fswatch.
+0bb7fc1 Add ignore pattern for Doxyfile.
+23e13c0 Add macros to detect Doxygen availability to configure.ac.
+58e268c Add ignore pattern for Doxygen configuration file.
+0c3e4e9 Refactory monitor_factory to dynamically create the default monitor using the factory registration info.
+13e2f9a Fix refactoring bug in monitor_factory::create_monitor: function would never return.
+be36974 Reformat.
+8b90b02 Add missing <cstdarg> include.
+a0635e3 Do not close handle during move or assignment if source and target objects contains the same handle.
+3c6e366 Update po and pot files.
+d783764 Refactor to use functions in fsw::string_utils.
+2ff4b4b Move fsw::string to fsw::string_utils.
+53701c8 Refactor log functions to use the string utility functions.
+f3fcf66 Add functions to create a std::string from a printf format.
+46a26c5 Add git ignore pattern for .idea/dictionaries.
+655dc2b Move paths vector in monitor constructor.
+6766211 Declare callback used by fswatch.
+4254b97 Add factory function to register a monitor by type.
+bb82169 Update code-style setting to put brace in new line in lambda.
+0338825 Reformat using the newly-configured code-style settings.
+386c7e2 Update CLion code-style settings.
+6b61465 Remove non-accessed variables.
+f27a10b Update code style rules for IDEA.
+5c4fae1 Update library version.
+9fa9ec3 Add CLion project files.
+d52a97f Add README.cmake.
+b57ebd1 Remove unused interface members.
+927ea4e Cleanup unused imports.
+3535b4b Initial CMake files.
+a39b4e4 Exclude IDEA files.
+295e4fe Merge branch 'master' into develop
+925d495 Update README.md.
+cbd3ecb Bump 1.8.0-develop.
+81c8278 Merge tag '1.7.0' into develop
+aa79549 (tag: 1.7.0) Merge branch 'release/1.7.0'
+85d5454 Update po and pot files.
+cc5bec4 Bump v. 1.7.0.
+dd6d107 Update Texinfo documentation.
+3c88f78 Reformat code.
+5a76c0d Reorder getops options.
+0ca8c1f Update Texinfo documentation.
+c615999 Fix usage of @command and @file.
+6025ecf Merge pull request #105 from MaxGabriel/patch-2
+51f501e his => their in README
+52b19b3 Update.
+1aa0270 Update Texinfo documentation.
+763599e Add Solaris/Illumos to the list of supported operating systems in the description.
+bb6ec59 Update PO and POT files.
+d951ef2 Merge branch 'feature/file-event-notification-support' into develop
+91dc952 Issue 101: Add option to watch file accesses.
+cdcaf70 Fix usage message.
+2e1ddd6 Update NEWS files.
+356d842 Add Solaris/Illumos' README files to distribution.
+4662187 Add support for FILE_ACCESS filter.
+b6d455d Update README.smartos.
+3d6bfc3 Add README for SmartOS.
+a008a03 Add README for illumos and solaris.
+ffb3ab7 Add information about Freenode #fswatch channel.
+28371bd Refactor:
+08e6e0d Update ~fen_monitor_load().
+20c49f8 Remove redundant event type mapping.
+4b7270e Close port handle when finished.
+b2c23a3 Detect removed files and port_disassociate() them.
+fab032c Update fen_monitor.
+937d172 Add draft implementation of the fen_monitor.
+5cb66c0 Fix comparison.
+26447e0 Remove unused variable.
+fc9d66f Add configure check the availability of <port.h> and port_create in libc.  Refactor fen_monitor.
+683f9ec Rename fen.{c,h}pp to fen_monitor.{c,h}pp.
+7c16265 Add fen monitor sources to Makefile and POTFILES.in.
+46f1c0c Add skeleton sources for Solaris/Illumos file events notification monitor.
+370b172 Fix signed/unsigned integer comparison.
+2b3b945 Fix wrong function call after refactoring.
+b2efb47 Merge pull request #99 from AlainODea/IllumosBuildSupport
+b3054d7 Cosmetic changes to the Texinfo documentation.
+50220ed Allow build on Illumos
+2b4c50d Merge branch 'feature/recurse-and-watch-directories-only' into develop
+1150862 Update Texinfo documentation.
+454036c Update the inotify monitor to treat the directory_only flag as if it were always set to true.
+68f0f0a Ignore -d when processing a path that has been explicitly passed as a parameter.
+e586031 Refactor get_directory_children to return a vector<string> instead of requiring the caller to provide one.
+c88a20f Update Texinfo documentation.
+1515263 Update Texinfo documentation.
+bcd6623 Update NEWS files.
+af6a031 Update Texinfo documentation.
+ea898cb Add C support for set_directory_only.
+ad2b683 Bump libfswatch 5:0:2.
+743758e Minor refactor in inotify_monitor.
+db37bfa Update the kqueue monitor to support the (-d, --directories) option.
+7ae8098 Add fsw_logf_perror function to wrap a call to perror passing a printf-style format string with parameters.
+b5ed036 Migrate old logging code.
+ff49cf8 Do not open files with O_NOFOLLOW.
+cd60d38 Move implementation details into pimpl.
+32064e6 Update the kqueue monitor to support the (-d, --directories) option.
+ca54b8d Update the inotify monitor to support the (-d, --directories) option.
+94dc106 Add (-d, --directories) option to fswatch and add corresponding flag in monitor.
+a4f3411 Merge tag '1.6.1' into develop
+14ec961 (tag: 1.6.1) Merge branch 'hotfix/1.6.1'
+e3ce9c8 Remove debian package descriptors.
+80a24b5 Update Debian changelog.
+ca24599 Update Build-Depends in the Debian descriptors.
+74adcff Merge branch 'hotfix/1.6.1' of github.com:emcrisostomo/fswatch into hotfix/1.6.1
+4ac68a4 Update Automake configuration: require 1.14 and set std-options.
+7328bb8 Add Debian packaging descriptors.
+c851d1d Update NEWS.
+e9b2577 Add @dircategory and @direntry to Texinfo files.
+809b2f6 Bump v. 1.6.1.
+fc8a63b Bump v. 1.7.0.develop.
+331ae3b Merge tag '1.6.0' into develop
+13f9a6b (tag: 1.6.0) Merge branch 'release/1.6.0'
+e51a428 Add README.windows to the distribution.
+b1ba1e9 Add README.windows.
+2492a02 Update README.md.
+4694cb8 Update NEWS.
+33e70e1 Update translations (pot and po files).
+609c1c2 Simplify guarding the session on multithreaded implementations using a macro.
+f610f4a Add fsw_add_property to the C API.
+3972767 Cleanup namespace explicit usage.
+0a37aa6 Merge branch 'release/1.6.0' of github.com:emcrisostomo/fswatch into release/1.6.0
+9d7e3c3 Use notify_overflow in the inotify monitor.
+a2af3a0 Update notify_overflow signature.
+39da6a6 Pass watched path when notifying an overflow event.
+fa88815 Update Texinfo documentation.
+b11595d Remove is_verbose() and use libfswatch instead.
+74d0e07 Move includes from header to source file and clean up.
+88a5a7d Clean up and remove unused includes.
+ffcde63 Update Texinfo documentation.
+44b5626 Update method signature to use a const reference.
+8623e23 Use libfswatch log functions and remove legacy ones.
+c7812f8 Update po and pot files.
+8578c8b Refactor log functions.
+f414fdf Exclude private OS-specific header from the install target.
+4ede236 Remove useless header includes.
+06aaa82 Update po files.
+8241e0b Update POT files.
+bf7406a Add missing headers to Makefile.am.
+a19f0e8 Refactor windows_monitor.
+3edaa23 Fix missing newline in PO file.
+155bbb3 Update file header.
+e362058 Update PO and POT files.
+e764461 Update POTFILES.in.
+5c51dd1 Move Windows-specific code to separate classes.
+f5a8a9a Use strtol instead of string::stol because of a Windows C++ library bug.
+517f824 Add --monitor-property option to pass monitor-specific configuration properties.
+7f44574 Reset event and read next change event after an overflow.
+d2ac21b Map Overflow event type.
+1636faf Update Texinfo documentation.
+6363c70 Update Texinfo documentation.
+2d3804f Add the --allow-overflow option to allow monitor buffer overflows and have fswatch report them as change events.
+e20205d Add the possibility to report monitor buffer overflows.
+6c8c4b0 Bump 1.6.0.
+6a7f704 Update README.
+0e03508 Update Texinfo documentation.
+01170f3 Update NEWS.
+2febb99 Add *.t2p and documentation PDF to ignore list.
+cbb62f8 Merge branch 'feature/windows-support' into develop
+9a5f62b Bump libfswatch 4:0:1.
+826aa6d Update pot templates.
+da80f6c Update translations.
+358e090 Move win_error_message to separate files.
+ac3c5ae Move win_hamdle to separate files.
+11d33e0 Merge branch 'develop' into feature/windows-support
+59751f8 Convert global variables to static method functions to avoid global initialization race conditions.
+3c5e548 Update translations.
+822ef3d Update translations.
+5a28af5 Merge branch 'feature/windows-support' of github.com:emcrisostomo/fswatch into feature/windows-support
+ba8508f Merge branch 'develop' into feature/windows-support
+ad4c093 Catch libfsw_exception in C API.
+f143f70 Refactor the windows_monitor to use FSW_LOGF.
+754e24c Define the macros FSW_LOG and FSW_LOGF to simplify log management and to automatically prepend the name of the method where this macro is invoked to the logged message.
+1115888 Add windows_monitor.cpp to POTFILES.in.
+1b24efc Convert Windows paths back to POSIX paths when printing events.
+4cea26d Compile the Windows monitor only if both Windows and CygWin SDKs are detected.
+c53cdf6 Make sure Automake conditionals are not defined conditionally.
+c688df3 Check whether the CygWin library is available if Windows is available.
+cebb510 Report event queue overflow on both the inotify and Windows monitor.
+f46f609 Log diagnostic messages only if verbose mode is on.
+3901c28 Use multibyte strings in iostreams.
+214cf29 Refactor code.
+67774fe Refactor code.
+cf224e4 Refactor directory_change_event.
+f488366 Refactor win_handle.
+1a19946 Refactor win_error_message.
+a4e5893 Remove unused headers.
+901e818 Process event types.
+6245788 Merge branch 'develop' into feature/windows-support
+98c7bf6 Check if required kqueue functions are available in libc.
+becfd8e Check for inotify functions in libc.
+3137859 Update autogen.sh to treat warnings as errors.
+8020f52 Check for the presence of inotify headers and for the availability of the necessary functions.
+8505e13 Simplify string processing routines by defining ostream::operator+ to encapsulate string conversion from wide char to multibyte.
+d38058e Refactor path processing routing to convert its output to UTF8.
+508ce9d Add logging code to the Windows monitor.
+03a3ddd Add log function accepting varargs.
+b87f6ff Add verbose logging to libfswatch and propagate the -v option from fswatch to libfswatch.
+e63f5d6 Remove debug output.
+bfd7ac1 Use a single event per watched path through the process life.
+a5e017d Use Windows' asynchronous I/O to wait for change events.
+2e62e98 Initialize struct using brace initialization.
+d455c22 Merge pull request #94 from kellytk/master
+04a8cbe Spelling correction
+046fb08 Add constructor to DirectoryChangeEvents to override the buffer size.
+3b1b5ec Fix error management routine.
+74be110 Fix error management routine.
+1ab841a Update Windows monitor.
+ea457a6 Add static object factory WinErrorMessage::current().
+5aa8863 Encapsulate Windows system error message processing.
+119a2c0 Refactor CHandle in terms of is_valid.
+80ab48c Update.
+1b59d4c Refactor.
+e34b381 Add an assignment operator from HANDLE to CHandle.
+0af8aad Create RAII wrapper for HANDLE.
+09ac6f6 Refactor and encapsulate event data in a common struct.
+d23ecb9 Use overlapped I/O.
+bf23c50 Add windows monitor initial draft.
+f68091c Add checks for the Windows directory change notification API and enable conditional compilation of the Windows monitor.
+fcf4ed9 Add fswatch.exe to the ignore patterns.
+0a9a465 Merge branch 'develop' into feature/windows-support
+4efe605 Aesthetic cleanup.
+a7b7348 Add mandatory check for unistd.h and conditionally check for getopt_long if getopt.h is available.
+5153be6 Add autoscan.log and configure.scan to Git ignore patterns.
+dd8b0a3 Update PO and POT files.
+a9ded2e Move C++ header files to .hpp.
+05f9ca6 Refactor monitor-checking code and fix kqueue detection by checking for the availability of both kqueue and kevent if sys/event.h has been found.
+cb2d46b Update configure.ac to use M4sh when possible.
+d5cae04 Have configure check for optional and required headers.
+f7078f9 Update configure checks.
+e0d6da1 Update .gitignore to filter out in-site build artifact.
+714d0c3 Clean up code conditioned by HAVE_REGCOMP.
+ed938dc Invoke AC_LANG before LT_INIT.
+ab3b13a Update .gitignore to filter out in-site build artifact.
+58d33d1 Move C++ header files to *.hpp.
+a57d529 Merge branch 'master' into feature/windows-support
+e1c1d64 Merge branch 'master' into develop
+d43e23c Add CONTRIBUTING.md to the distribution.
+b0fe50a Fix broken link.
+d57282d Update list style.
+20269b8 Add CONTRIBUTING.md.
+f43a722 Add Contributing section to README.md.
+ab9d7fe Remove unused configuration checks.
+f5efca5 Use C++ headers for C libraries when available.
+120d7c4 Update History section in Texinfo documentation.
+64bc884 Update NEWS adding references to GitHub issues.
+cb05c26 Remove legacy scripts.
+568e5ad Merge branch 'hotfix/1.5.1' into develop
+7752074 (tag: 1.5.1) Merge branch 'hotfix/1.5.1'
+eced175 Update Texinfo documentation.
+702e4b5 Update NEWS.
+5d22033 Fix import required when building on FreeBSD 9.3.
+6c584d3 Remove checks for Zsh and Bash and remove fswatch-run scripts.
+ba71ceb Bump 1.5.1.
+bada39c Bump 1.6.0.develop.
+9519745 (tag: 1.5.0) Merge branch 'release/1.5.0'
+81091b4 Merge branch 'release/1.5.0' into develop
+e9a90e5 Fix signed/unsigned comparison on gcc.
+1e264b9 Add missing include.
+e3256f7 Distribute gettext.h.
+8938e83 Update NEWS.
+376de51 Simplify the Documentation section.
+74db727 Rearrange README.md entries.
+900a594 Fix anchor typo.
+2480795 Update README.md.
+94a334a Update README.md with links to the GitHub page.
+ca17426 Merge branch 'develop' into release/1.5.0
+4ab9103 Update README.md with links to fswatch's GitHub page.
+86646a8 Rename Index node to General Index to avoid Texinfo clobbering the index.html page when outputting HTML.
+8d167fb Rename Index node to General Index to avoid Texinfo clobbering the index.html page when outputting HTML.
+08253a5 Update man page.
+14b4e2f Update fswatch's TeXinfo documentation.
+c4d026d Update libfswatch's TeXinfo documentation.
+6d6b13e Cleanup and refactor libfswatch's Makefile.
+54bd867 Refactor to use memory management functions.
+6b3b01c Add memory management functions.
+82101dd Rewrap document in Emacs' texinfo mode.
+9dcea8b Bump 1.5.0 and libfswatch API version 3:0:0.
+fb890fe Merge branch 'feature/event-type-filter' into develop
+8d37e21 Remove custom xgettext invocation (available into the standard Autotools workflow).
+1f2bcff Update PO configuration files.
+f7b54eb Update translations.
+ab12262 Update POTFILES.in.
+8131fe9 Update PO and POT files.
+3e97992 Use event::get_event_flag_name in fswatch.
+7283c70 Use event::get_event_flag_name in std::ostream& operator<<(std::ostream& out, const fsw_event_flag flag).
+f9b6a57 Reformat.
+be853dd Move monitor_filter to fsw::monitor_filter.
+af0fb7f Fix namespace bug: move event to fsw::event.
+660b960 Add --event option to let users add event type filters.
+7f7375e Add FSW_ERR_UNKNOWN_VALUE error code.
+0d66937 Add API functions to get an event type by name and to get the name of an event type.
+3c1d01c Refactor monitors to use monitor::notify_events.
+bed5e45 Move path filtering logic, event filtering logic and callback invocation to monitor class.
+70fa06b Add function to libfswatch to add event type filters to a session.
+f0bd4e3 Update monitor to hold an optional list of event filters.
+a8ddd22 Define a structure for an event flag filter.
+3b24960 Fix signed/unsigned comparison.
+b0bfd49 Configure libtool to use -no-undefined when linking shared libraries on CygWin.
+5a1a49d Merge branch 'develop' into feature/windows-support
+0160c9c Fix bug that had fsw_destroy_session always return FSW_ÖK.
+650d1fe Import <cstdio> to define realpath.
+7970806 Enable C++11 with extensions (realpath may not be available in strict ANSI mode).
+1a5d300 Update ignore file for in-tree builds.
+a852a9a Cosmetic refactoring.
+836af3f Update obsolete Autoconf macros.
+f2308ef Add missing const.
+8188bf1 Update copyright and rewrap.
+adde10b Fix constness.
+b58eefd Update the TeXinfo documentation.
+419f9d6 Update the TeXinfo documentation.
+e0c4bd4 Update the TeXinfo documentation.
+82a7bc2 Merge branch 'feature/libfswatch-texinfo-doc' into develop
+dc6e14c Update the TeXinfo documentation.
+5510966 Update TeXinfo documentation.
+f7de6e3 Save last error even if the thread_local storage specified is not supported.
+1bc4d8e Update TeXinfo documentation.
+843de5e Update the TeXinfo documentation.
+e33e479 Update TeXinfo documentation.
+216408b Update TeXinfo documentation.
+f43ca3d Update TeXinfo documentation.
+721e714 Refactor factory methods to simplify them.
+9d74a19 Rename factory methods.
+9338f17 Update TeXinfo documentation.
+0ae0904 Rephrase reference to the official documentation.
+58fde3b Add --event-flag-separator option to the man page.
+9817ea6 Add --batch-marker option to the man page.
+b79363a Update the man page and add the (--list-monitors, -M) option.
+f8229c7 Add the (--list-monitors, -M) option to the TeXinfo manual.
+1686b87 Update the Italian (IT) po file.
+5565062 Update the Spanish (ES) po file.
+5edc19b Update fswatch po template file.
+338808a Add (-M, --list-monitors) option.
+d0606a2 Update libfswatch po files.
+b1cec6b Bump 1.5.0.develop.
+aa6174c Bump libfswatch 2:0:0.
+7bf25db Move all the factory methods into monitor_factory and refactor.
+70a8bdd Merge branch 'develop' into feature/libfswatch-texinfo-doc
+7da8577 Merge branch 'feature/improve-monitor-factory' into develop
+5cc1a8e Remove legacy code.
+706eaf0 Refactor methods that can be const.
+1a14945 Use intermediate variable.
+40ae744 Merge branch 'develop' into feature/improve-monitor-factory
+d85588c Fix quotation.
+0eecd8e Rewrap text at 80th column.
+c2f58ab Merge branch 'develop' into feature/libfswatch-texinfo-doc
+e955614 (tag: 1.4.7) Merge branch 'release/1.4.7'
+2a6e106 Merge branch 'release/1.4.7' into develop
+5d678ac Update po and pot files.
+bd367bc Update NEWS.
+718e4bf Update po files.
+0a6d352 Update TeXinfo documentation.
+afcc607 Update.
+acd7e82 Update NEWS.
+4730e6b Add all README files to distribution.
+1524737 Update po files.
+bc59a7d Bump autotools dependencies.
+e2f25e4 Bump autotools dependencies.
+fcd0587 Require autoconf 2.68.
+6318bc4 Update .travis.yml.
+321e451 Remove sudo invocations from .travis.yml.
+88ae7cc Use container-based builds.
+9184ea4 Update Travis scripts.
+6a7b3f2 Set required gettext version to 0.18.3 to accomodate for Travis CI VM packages.
+72e0159 Add dependency to autopoint.
+a3db8a7 Fix dependencies during Travis build.
+60449bc Fix dependencies during Travis build.
+f8daa01 Add gettext package from Brew before the Travis build.
+4974cc4 Update Travis script.
+ab9fba6 Add Travis configuration file.
+c409ed8 Merge branch 'develop' into release/1.4.7
+d8503c0 Add license badge.
+c06e95d Update NEWS.
+a26b35d Bump v. 1.4.7.
+0a163a3 Fix filter behaviour and make them consistent with the documentation.
+899cb3b Add indent style information.
+d2591ad Reformat code.
+8ec7736 Merge branch 'gsamokovarov-c-api-extra-context-data' into develop
+6a0bde8 Merge branch 'c-api-extra-context-data' of https://github.com/gsamokovarov/fswatch into gsamokovarov-c-api-extra-context-data
+b03141a Merge branch 'master' into develop
+63fa31c Merge pull request #75 from Zearin/patch-1
+0665e2c Minor edits to clarity, phrasing, and formatting
+71392a1 Attach additional data to C API monitor callbacks
+df65a49 Merge branch 'release/1.4.6' into develop
+578c1d8 (tag: 1.4.6) Release 1.4.6.
+505c9a1 Bump v. 1.4.6.
+15842d7 Bump v. 1.4.6.
+c655610 Fix Issue 74 (https://github.com/emcrisostomo/fswatch/issues/74): Assertion failed on fsw_destroy_session.
+5ab39e4 Merge branch 'master' into develop
+a6a26a1 Merge branch 'master' into develop
+d4a7b30 Merge pull request #73 from sachinsudheendra/fix-doc-1
+6390a31 Fixing documentation with correct flag option
+a8701b8 Fix issue 67 (https://github.com/emcrisostomo/fswatch/issues/67): 100% CPU usage while using libfswatch.
+3002295 (tag: 1.4.5.3) Merge branch 'release/1.4.5.3'
+b4cacbc Merge branch 'release/1.4.5.3' into develop
+1808eed Bump v. 1.4.5.3.
+c0a8d0f Fix issue 67 (https://github.com/emcrisostomo/fswatch/issues/67): 100% CPU usage while using libfswatch.
+0db6447 Bump v. 1.4.6-current.
+785afb4 Merge branch 'master' into develop
+8450dd5 (tag: 1.4.5.2) Update NEWS file for v. 1.4.5.2.
+78b8e7c Merge branch 'release/1.4.5.2' into develop
+e898dc9 Merge branch 'release/1.4.5.2'
+8f97e51 Configure tar.gz distributions.
+0cc4bb5 Bump v. 1.4.5.2.
+fb982e5 Fix issue 66 (https://github.com/emcrisostomo/fswatch/issues/66): excluded items are not managed correctly by the poll monitor.
+29b5eb2 Merge branch 'develop' into feature/improve-monitor-factory
+6af533c Merge branch 'hotfix/1.4.5.1' into develop
+a7842b6 (tag: 1.4.5.1) Merge branch 'hotfix/1.4.5.1'
+ef82f2f Bump v. 1.4.5.1.
+c306a54 Do not distribute wrapper scripts for shells which are not installed (the FreeBSD port system checks shebangs and complains).
+4807457 Bump v. 1.4.6-current in <develop>.
+6189da3 (tag: 1.4.5) Merge branch 'release/1.4.5'
+2be6be5 Merge branch 'release/1.4.5' into develop
+d630bb6 Merge branch 'juliekoubova-patch-1' into develop
+5d1326e Merge branch 'patch-1' of https://github.com/juliekoubova/fswatch into juliekoubova-patch-1
+1a85db0 Remove unnecessary std namespace qualifiers.
+6ae54b6 fixed a typo
+c43cfdf Update monitor_registrant in order to accept a creator function to create a specific monitor type.
+aa633bc Add initial monitor_factory description to the documentation.
+cfd0c5b Update teh C++ API section.
+b63c2da Add Makefile for libfswatch's documentation.
+b34ef4b Remove dependency on value.texi.
+e22f738 Add initial texinfo documentation for libfswatch.
+8ea7d78 Update README.md.
+c559adf Bump v. 1.4.5.
+45bae72 Update version.
+83d6f75 Update version.
+4dcf446 Use std-option when install-checking fswatch.
+c5c117d Propagate M4 variable to Automake variable to set libfswatch version info.
+c94281b Update PO and PO template file.
+b04e93e Do not use shell scripts to set the package version because they are not detected as dependencies by Automake nor can be successfully executed when sources are outside the Git tree.
+9548c93 Update fswatch so that --help and --version succeed and exit with 0.
+b0c345d Amend missing Spanish locale in README.
+6e63d7b Merge branch 'release/1.4.4' into develop
+e2a2399 (tag: 1.4.4) Merge branch 'release/1.4.4'
+1d4989f Use m4_esyscmd_s instead of m4_esyscmd so that trailing newlines are removed from the result in libfswatch.
+de91ef5 Update NEWS.
+2b984dc Update PO and PO template files.
+4da4426 Merge branch 'feature/record-format' into develop
+0985a93 Add section to event flag separator customization in the documentation.
+da32daf Add --event-flag-separator to customize the event flag separator string.
+47455c8 Update documentation adding section about custom record formats.
+da67506 Update localisations.
+f2a007b Update printf_event to accept an optional output stream and use it to test the format string.
+4152b8f Update code so that line separator is not determined by the format.
+7ab69cf Use default record format only when --format is not specified.
+7214877 Update option parsing logic to make --format incompatible with other formatting options.
+4a203b1 Map existing format options (-0, -t, -x) to corresponding formats for printf_event.
+846e8f7 Print event records using printf_event.
+b3ae34a Add printf-like function to print an event to stdout.
+732d137 Add configure dependencies to trigger automatic Makefile rebuilds.
+fe54b40 Add configure dependencies to trigger automatic Makefile rebuilds.
+eb694b9 Use m4_esyscmd_s instead of m4_esyscmd so that trailing newlines are removed from the result.
+0325fa1 Add README.linux to the list of distributed files.
+2f536b5 Update README.freebsd.
+3a056e3 Add README.linux file.
+b4248f0 Update README files.
+275f20d Add Emacs local variables to shell script files.
+51e384a Update ChangeLog template.
+be3e538 Fix README.md formatting.
+8e2b8d6 Update README.md and README.osx.
+08a2f1b Update NEWS.
+b2368ab Add Emacs local variables.
+8645ed2 (tag: 1.4.3.2) Merge branch 'hotfix/1.4.3.2'
+87a422e Merge branch 'hotfix/1.4.3.2' into develop
+d6f7c94 Fix Makefile.am because of broken link when DESTDIR installs are performed.
+b08c444 Merge branch 'hotfix/1.4.3.1'
+7b95bd4 Merge branch 'hotfix/1.4.3.1' into develop
+a3952a0 Fix bug in fswatch-run wrapper script for ZSH which caused last argument not to be split when passed to xargs.
+d5d98c6 Update PO and POT files.
+9cece81 Update fswatch's include paths after source refactoring in libfswatch.
+6a007a2 Update POTFILES.
+c2deb5d Add Makefiles to libfswatch.
+318b3c6 Make libfswatch a non-flat project and move sources into src/libfswatch.
+6cbc780 Merge branch 'feature/libfswatch-gettext' into develop
+eb7e79d Add Spanish (es) localization.
+f97dd71 Add Italian (it) localization.
+7cd12ff Localize strings in libfswatch.
+0f15c33 Add library initialization library.
+d10c41f Add LOCALEDIR definition to Makefile.am.
+5f5120c Update .gitignore so that automatically generated PO files and GMO files are excluded at any depth.
+47c53cf Add LINGUAS file declaring English (en and automatically generated variants), Italian (it) and Spanish (es) and add initial PO files.
+c46c589 Add initial PO template file for libfswatch.
+75c610a Make fsevents_monitor.cpp localizable.
+ff6e676 Update Makefile.am to distribute gettext.h and gettext_defs.h
+65c6ed8 Add gettext.h and add auxiliary header gettext_defs.h to define _() as a function of gettext().
+f59b788 Add po directory with Makevars and POTFILES.in.
+6f68ab7 Update Makefile.am and configure.ac after running gettextize.
+32f631b Normalize Spanish PO file.
+0665d29 Exclude automatically generated PO files and GMO files and add them to .gitignore.
+843262c Add Spanish (es) localization.
+71929e3 Merge branch 'feature/gettext' into develop
+3d936dd Add localization information into README.md and README.osx.
+1caa7cb Update PO files.
+c50193e Canonically rearrange entries in Makefile.am.
+5316fc9 Initialize gettext after language initialization.
+3d498b9 Move compiler configuration macro in language section.
+e516913 Update LINGUAS as described in the gettext manual.
+a7148bc Add LINGUAS file.
+d306db9 List files needing translation in POTFILES.in.
+2ca2db9 Update Makefile.am as described in gettext manual.
+d90a4ca Added Italian (it) translation.
+f55dd1e Merge POT file with existing PO files.
+817e1db Update fswatch PO file.
+c7a5513 Add initial it.po PO file.
+2ff4865 Add fswatch PO template file.
+eb170a3 Mark translatable strings in fswatch.cpp.
+6c513a3 Add template script build-aux/create-pot-template.sh.in to invoke xgettext with options populated by Autoconf.
+e2cc018 Trigger gettext operations in main.
+115b89d Convert the fswatch package to a non-flat package.
+219935a Correctly quote argument of AM_GNU_GETTEXT_VERSION as suggested by gettextize.
+753ed1a Add gettext.h so that conditional use of <libintl.h> is available.
+e8b6616 Add initial Makevars.
+2edf92e Add initial POTFILES.in.
+f11c596 Update Makefile.am and configure.ac with changes required by gettext and applied automatically by gettextize.
+df4cb3c Add files automatically generated by gettextize and autoreconf to .gitignore.
+740afb1 (tag: 1.4.3.1, tag: 1.4.3) Merge branch 'release/1.4.3'
+adf5492 Merge branch 'release/1.4.3' into develop
+de5acb3 Add disclaimer about documentation in package managers.
+85bca11 Add information about install-pdf in README.md.
+ba3ef70 Add download link for the PDF manual.
+196e152 Enhance documentation section in README.md.
+29414d3 Update NEWS for 1.4.3.
+9744119 Update ChangeLog template to describe how change logs are generated using Git.
+cb7d4e2 Add Documentation section to the README file.
+b0e07cc Fix missing newline in help message.
+2cbfcf0 Add batch marker documentation to texinfo manual.
+ec67812 Merge branch 'feature/Batch_Marker' into develop
+b82b03f Add batch marker feature.
+6125ed3 Add batch marker feature.
+08018f6 Add notice to redirect users to texinfo documentation in man page.
+3683b97 Fix whitespaces.
+1f8411b Update document and indices. Update Monitors section.
+3bc7941 Add monitors section.
+d46c361 Add description of the inotify monitor.
+429fb8e Add Monitor chapter and describe the FSEvents and kqueue monitor.
+5e75f7b Add section to describe the (--recursive, -r) option.
+de599d5 Add monitor section to document the (--monitor, -m) option.
+95d8579 Update numeric event flag section.
+2b5ac43 Update.
+60968c0 Update.
+430066c Update.
+d516d37 Add GNU Free Documentation License and add dependency in Makefile.
+cd0447a Rename fsw occurrence in string to fswatch.
+97b1207 Add TeXinfo file dependencies.
+5e6ae93 Add skeleton of texinfo manual.
+94971c9 Update NEWS.
+31266fd Move auxiliary configuration scripts to build-aux.
+de08131 Fix typos in man page.
+b29ebb9 Add bug report email to man page.
+4ed1d3e Add copyright and license to man page.
+887b6b8 Fix whitespaces in man page.
+634101d Add MONITORS and EXIT STATUS sections.
+ca1003c Fill in bug report address in man page using PACKAGE_BUGREPORT.
+33ff0c3 Update usage and examples in man page.
+32645e2 Fill man page variable using Autoconf config file substitution.
+6b98f13 Create man page using Autoconf config files.
+cf43628 Move man files to man subdirectory.
+ebdb85b Update the kqueue and the inotify monitor to sleep latency when no files can be watched yet.
+df780c8 Use  and  if set.
+ef172b8 Use git log to dynamically generate ChangeLog.
+25135a4 Update.
+dcc22b5 Use ::select to timeout a ::read using the monitor latency as the timeout amount.
+5f5122e Add Autoconf function checks for ::modf and ::select.
+c7773f3 Exit with error if atexit is not found.
+eee7bd6 Add AC_PROG_RANLIB and AC_CHECK_FUNCS([atexit])
+8ae47b1 Set library version info using an Autoconf-substituted variable.
+65f7573 Set library version info to 1.0.0.
+02e3036 Add --version option.
+82579e1 Improve help message adding bug report email and web page.
+d24087a Update README.
+e0f003e Add mention to running ldconfig in README.md.
+e0ddd15 (tag: 1.4.2) Merge branch 'release/1.4.2'
+c674001 Update change logs.
+3c558a8 Read version number and revision number from script output.
+5ebdb13 Add scripts to get version from git tags.
+5ada8a8 Read version number from file.
+207bb9d Enable silent make rules.
+21e1165 Set dist-zip by default and disable dist-gzip.
+d8ba6f5 Merge branch 'develop' of https://github.com/emcrisostomo/fswatch into develop
+c1fbe0b Update misleading ::perror argument.
+bb2b052 Update misleading ÑÑperror argument.
+1685374 Refactor method name.
+fa65da3 Update the inotify monitor.
+7b1311c Add the MovedFrom and MovedTo elements to fsw_event_flag.
+c48ab53 (tag: 1.4.1.1) Merge branch 'hotfix/1.4.1.1'
+85b2316 Merge branch 'hotfix/1.4.1.1' into develop
+51991a9 Refactor code to support the unavailability of std::unique_ptr.
+2d2b347 Add type check for std::unique_ptr in <memory>.
+61ee86a Add type check for std::unique_ptr in <memory>.
+09de366 (tag: 1.4.1) Merge branch 'hotfix/1.4.1'
+aabc450 Merge branch 'hotfix/1.4.1' into develop
+013a159 Bump v. 1.4.1.
+777643b Issue a configure warning if <mutex> is not found.
+a4d3a2a Use <mutex> only if HAVE_CXX_MUTEX is defined.
+4754b80 Add an Autoconf check for the <mutex> header.
+e0355e7 Update the inotify monitor to recursively scan directories.
+ed8f6e4 Do not check paths against filters during watch creation.
+669a4b6 Do not throw on non-existing path.
+900f248 (tag: 1.4.0) Merge branch 'release/1.4.0'
+895ad32 Merge branch 'release/1.4.0' into develop
+c3e59c5 Remove local cleanup hook becase it broke builds on the root directory.
+1a0dc5c Update and rename fsw to fswatch.
+be19c55 Update installation section with information about MacPorts and Homebrew.
+7ff1897 Update.
+7a2bae3 Rename inotify monitor's pimpl.
+18a52ce Avoid race conditions when initializing static members.
+2fba605 Define Automake conditionals in every code path.
+bbf8602 Rename members using the fsevent_ prefix to use fsevents_.
+1fcfd1a Refactor after fsevents_monitor name change.
+75448ee Use the fsevent_monitor only if the FSEvents API supports file events.
+13e5cb1 Compile the FSEvents monitor only if the OS X FSEvents API supports file events.
+f1087b3 Add M4 macro to check whether the OS X FSEvents API supports file events.
+3e8e382 Fix missed deallocation.
+6bb3694 Do not compare signed types against unsigned types.
+5416900 Include <memory> header required by unique_ptr.
+0820f23 Declare destructor noexcept.
+1ec1a58 Fix wrong included header path. Fix missing context parameter when invoking callback.
+a7ed7e5 Free memory allocated by the C callback proxy.
+b058478 Pass callback address to C proxy callback as context data.
+bcec60c Simplify the libfsw_cpp_callback_proxy memory allocation.
+49fb575 Document the libfswatch.h header.
+c48772d Document the cevent.h header.
+4152638 Update change log.
+d1588b3 Document the libfswatch.h header.
+671d21a Document the cmonitor.h header.
+2e047f5 Document the cevent.h header.
+15a4d15 Update.
+0c44cad Link README.md to README.
+a3ba3bc Updated instructions to setup the GNU Build System in a development environment.
+78bddc9 Update to forward arguments to autoreconf.
+3c1a7c5 Make private functions static.
+0578239 Document the libfswatch.h header.
+01943d7 Start documenting the libfswatch headers.
+9741c3c Update the manifest files of the libfswatch package.
+3ba8f67 Add usage example of the -m option.
+b403217 Update NEWS.
+11af6d3 Bump v. 1.4.0.
+3101ff2 Update mane page.
+d6f1a84 Update fswatch so that users can specify the monitor to be used by name. -k and -p options were removed.
+d9810db Update all monitors to register themselves into the factory.
+558c0a8 Add a monitor registration and factory facility in order to create monitors by name.
+fb7ac7d Update distributed document data.
+8059147 Add LICENSE file to libfswatch module.
+3ec811f Merge branch 'master' into develop
+9456a6d update History with new repo URL
+92f6139 Update.
+1e70591 Update ChangeLog.
+38605ea Update sources after moving fsw to fswatch.
+ed0b465 Remove elements migrated to libfswatch.
+d07a6a0 Add libfswatch submodule from fsw. See ChangeLog for further details.
+d298deb Merge configure.ac and Makefile.am from fsw. See ChangeLog for further details.
+8f0ad27 Do not track files automatically generated by libtool.
+b646c76 Add configure scripts for debug, static binary debug and release targets.
+095dc3f Fix formatting.
+3fb51da Add COPYING.
+484dff5 Update AUTHORS.
+9c7bb6b Correct some typos.
+51ad155 Reindent.
+90bf833 (tag: 1.3.9) Bump v. 1.3.9.
+2c55578 Update NEWS and README.
+58ea395 Update man page and include information about event filtering.
+e6e7310 Directory names must be filtered when events are fired because they are not filtered while scanning.
+7fc7969 Refactor kqueue monitor directory scanning implementation.
+79c9c3d Refactor poll monitor directory scanning implementation.
+b477578 Check filters only on the file path and not on scanned parent directories for the kqueue monitor.
+d8054c5 Check filters only on the file path and not on scanned parent directories for the kqueue monitor.
+7c2616f Check filters only on the file path and not on scanned parent directories.
+bd7adf9 Change the filter rules so that the first wins, no matter whether it's an exclusion or an inclusion filter.
+dd02b0e Add -i, --include option and basic implementation to support the use of an include regexp.
+764f896 Move -i option to -I.
+fb7b846 (tag: 1.3.8) Print diagnostic messages only when fswatch is run in verbose mode.
+57e6fdf (tag: 1.3.7) Remove usages of C++11 initializer lists so that fswatch builds with older compilers.
+10e0ea8 Fix typo.
+35af754 (tag: 1.3.6) Updated.
+2479407 Update.
+07fdbf3 Update.
+a48a107 Use /bin directory in the sha bang of a shell script whose shell has not been found in the system.
+d7d73ef Add AC_PATH_PROG macros to detect the paths of ZSH and Bash and AC_SUBST them.
+ffde403 Update scripts to be template files so that the Autoconf can fill in the correct shell path in the sha bang.
+1a8199b Remove symbolic link during the uninstall target and use LN_S.
+01a6af3 Link fswatch-run to the correct shell-specific wrapper.
+9809e09 Bump v. 1.3.6, check if ZSH and Bash are available and prepare Automake variables.
+63b2ef5 Add a fswatch-run wrapper for ZSH and Bash.
+313ef4b (tag: 1.3.5) Bump v. 1.3.5 and update distribution files.
+09e11be Write usage to standard error when invalid arguments are specified.
+2430c95 (tag: 1.3.4) Bump v. 1.3.4.
+3d2128a Merge pull request #26 from nobeans/fix/fswatch-run
+e044bee Remove a quotation from xargs arguments to run a command with arguments
+dbbd2de (tag: 1.3.3) Merge branch 'release/1.3.3'
+64def03 Merge branch 'feature/Issue-20' into develop
+2430fbc Update man page.
+0096e40 Add information about fswatch-run in README.
+7b25f6d Add shell script to mimic the behaviour of earlier fswatch versions and launch the specified command when change events are received.
+922ac0c Add section about compatibility issues with v. 0.x.
+5a48928 Add section about compatibility issues with v. 0.x.
+fd531ca Add -o/--one-per-batch option to print a single message with the number of change events in the current batch.
+9501e2b Bump v. 1.3.3.
+f0c2e68 Issue 22: Add link to release page.
+7c92230 (tag: 1.3.2) Bump v. 1.3.2 to align fswatch releases with fsw. Update ChangeLog.
+9a33505 Add History section to README.
+457ede7 Add man file.
+0c5f4f7 Fix typo.
+46b5095 Add README.* files.
+10ea4d7 Bump v. 1.0.0 and update README.
+96e66f1 Initial merge with fsw (https://github.com/emcrisostomo/fsw).
+74c55f5 Update configure.ac and ChangeLog.
+3ff7d03 Reconfigure the project as a C++ project.
+70e5478 Establish the following ordered compiler search list: CLang, GCC.
+e9534dc Merge pull request #16 from emcrisostomo/master
+27dd186 Link LICENSE to COPYING, update copyright, license and authors.
+8ff0e67 Update README file.
+36e26d0 Update README file.
+7c276cc Add files to build the program using the GNU Build System.
+460e818 Add exclusions for GNU Build System, Eclipse CDT and NetBeans to .gitignore.
+709b349 Remove custom Makefile.
+38d47dc Merge pull request #15 from kud/patch-1
+f79dab7 Add brew instructions.
+5910b7a Merge pull request #13 from chetbox/master
+ffbc670 allow bash commands with arguments to be passed as arguments to fswatch
+c049e85 (tag: 0.0.2) added license (bsd new), closes #7
+a6ff7fd Merge pull request #1 from marceloandrader/master
+b1ba236 Added documentation to multiple dir support
+62a9814 Allow watch multiple directories
+5e9ef06 (tag: 0.0.1) fix a small tyop
+0790697 bash formatting for rsync example
+1acf9f1 README -> README.md
+8139725 update readme
+3273e6f a makefile, why not
+a0db417 run shell command instead of path
+c447f6e pass environ to child process
+e7e5f4a initial commit
