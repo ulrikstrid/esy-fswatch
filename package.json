@@ -15,6 +15,7 @@
       "#{os == 'windows' ? 'CFLAGS=\"-DHAVE_WINDOW\"' : ''}",
       "#{os == 'windows' ? 'CXXFLAGS=\"-DHAVE_WINDOWS\"' : ''}",
       "--prefix=$cur__install",
+      "--disable-silent-rules",
       "--disable-dependency-tracking"
     ],
     [
@@ -23,8 +24,7 @@
       "#{os == 'windows' ? './build-scripts/build-windows.sh' : 'true'}"
     ],
     "make",
-    "make install",
-    "echo $cur__install"
+    "make install"
   ],
   "buildEnv": {
     "WINDOWS_AVAILABLE": "#{os == 'windows' ? 'yes' : 'no'}",
