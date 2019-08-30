@@ -6,7 +6,9 @@ cd ./test_dir
 
 echo '{"dependencies": {"fswatch" : "ulrikstrid/esy-fswatch:package.json#'$(git rev-parse --short HEAD)'"}}' > package.json
 
+echo "ESY INSTALL"
 esy install
+echo "ESY BUILD"
 esy build
 
 esy x fswatch --help

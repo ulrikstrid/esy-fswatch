@@ -1,21 +1,40 @@
 jobs:
-- template: .ci/build.yml  # Template reference
-  parameters:
-    ESY__CACHE_INSTALL_PATH: /Users/vsts/.esy/3____________________________________________________________________/i
-    host: macOS
-    pool:
-      vmImage: 'macOS-latest'
+- job: macOS
+  pool:
+    vmImage: 'macOS-latest'
+  steps:
+    - template: ./.ci/use-esy.yml
+    - bash: ./test.sh
+      displayName: "Test package"
 
-- template: .ci/build.yml  # Template reference
-  parameters:
-    ESY__CACHE_INSTALL_PATH: /home/vsts/.esy/3_____________________________________________________________________/i
-    host: Linux
-    pool:
-      vmImage: 'Ubuntu-latest'
+- job: Linux
+  pool:
+    vmImage: 'Ubuntu-latest'
+  steps:
+    - template: ./.ci/use-esy.yml
+    - bash: ./test.sh
+      displayName: "Test package"
 
-- template: .ci/build.yml  # Template reference
-  parameters:
-    ESY__CACHE_INSTALL_PATH: /C/Users/VssAdministrator/.esy/3_/i
-    host: Windows
-    pool:
-      vmImage: 'vs2017-win2016'
+- job: Windows
+  pool:
+    vmImage: 'vs2017-win2016'
+  steps:
+    - template: ./.ci/use-esy.yml
+    - bash: mkdir -p test_dir
+      displayName: 'make test dir'
+    - bash: |
+        echo '{"dependencies": {"fswatch" : "ulrikstrid/esy-fswatch:package.json#'$(git rev-parse --short HEAD)'"}}' > package.json
+      displayName: 'create test package.json'
+      workingDirectory: test_dir
+    - script: esy install
+      displayName: 'Install esy-deps'
+      workingDirectory: test_dir
+    - script: esy build --verbose
+      displayName: 'Build test project'
+      workingDirectory: test_dir
+    - script: esy x fswatch --help
+      displayName: 'Test if fswatch is installed'
+      workingDirectory: test_dir
+    - script: esy x which libtoolize
+      displayName: 'Test if fswatch is installed'
+      workingDirectory: test_dir
