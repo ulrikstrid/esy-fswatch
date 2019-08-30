@@ -25,7 +25,6 @@
         "-c",
         "#{os == 'windows' ? './build-windows.sh' : 'true'}"
       ],
-      "make",
       "make install"
     ],
     "install": "make install",
