@@ -17,7 +17,7 @@ jobs:
 
 - job: Windows
   pool:
-    vmImage: 'vs2017-win2016'
+    vmImage: 'windows-latest'
   steps:
     - template: ./.ci/use-esy.yml
     - bash: mkdir -p test_dir
