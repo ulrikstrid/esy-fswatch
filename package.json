@@ -12,8 +12,6 @@
       "find ./ -exec touch -t 200905010101 {} +",
       [
         "./configure",
-        "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}",
-        "#{os == 'windows' ? '--target=x86_64-w64-mingw32' : ''}",
         "#{os == 'windows' ? 'CFLAGS=\"-DHAVE_WINDOW\"' : ''}",
         "#{os == 'windows' ? 'CXXFLAGS=\"-DHAVE_WINDOWS\"' : ''}",
         "--prefix=#{self.install}",
