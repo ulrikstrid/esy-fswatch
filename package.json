@@ -28,7 +28,6 @@
       "make",
       "make install"
     ],
-    "install": "make install",
     "buildEnv": {
       "WINDOWS_AVAILABLE": "#{os == 'windows' ? 'yes' : 'no'}",
       "CYGWIN_AVAILABLE": "#{os == 'windows' ? 'yes' : 'no'}"
