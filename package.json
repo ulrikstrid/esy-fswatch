@@ -16,7 +16,7 @@
         "#{os == 'windows' ? '--target=x86_64-w64-mingw32' : ''}",
         "#{os == 'windows' ? 'CFLAGS=\"-DHAVE_WINDOW\"' : ''}",
         "#{os == 'windows' ? 'CXXFLAGS=\"-DHAVE_WINDOWS\"' : ''}",
-        "--prefix=#{$cur__install}",
+        "--prefix=#{self.install}",
         "--disable-dependency-tracking",
         "--disable-silent-rules"
       ],
@@ -25,6 +25,7 @@
         "-c",
         "#{os == 'windows' ? './build-windows.sh' : 'true'}"
       ],
+      "make",
       "make install"
     ],
     "install": "make install",
