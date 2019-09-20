@@ -42,7 +42,7 @@
       }
     },
     "dependencies": {
-      "libtools": "esy-packages/esy-libtools#c67958cdc73c0b881846f188f0e4b5ff8d4f9a1b",
+      "libtools": "esy-packages/esy-libtools#0fe768722d345533f86df32f4de3b6a374160e2e",
       "gettext": "esy-packages/esy-gettext#4069a3333a079828afe7ba7935c1b400738d1f72",
       "automake": "esy-packages/esy-automake#f4fecab89169dd64cc363ec902d828c55c257fc0",
       "autoconf": "esy-packages/esy-autoconf#ea58671a08c7ebf89b0cebd41f4950ca67157b01",
