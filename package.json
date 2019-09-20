@@ -1,5 +1,5 @@
 {
-  "version": "0.13.0",
+  "version": "1.13.0",
   "source": "https://github.com/emcrisostomo/fswatch/releases/download/1.13.0/fswatch-1.13.0.tar.gz#c533fb6d9206814e12541282a76570412f65dc10",
   "override": {
     "buildsInSource": true,
@@ -45,7 +45,8 @@
       "libtools": "esy-packages/esy-libtools#c67958cdc73c0b881846f188f0e4b5ff8d4f9a1b",
       "gettext": "esy-packages/esy-gettext#4069a3333a079828afe7ba7935c1b400738d1f72",
       "automake": "esy-packages/esy-automake#f4fecab89169dd64cc363ec902d828c55c257fc0",
-      "autoconf": "esy-packages/esy-autoconf#ea58671a08c7ebf89b0cebd41f4950ca67157b01"
+      "autoconf": "esy-packages/esy-autoconf#ea58671a08c7ebf89b0cebd41f4950ca67157b01",
+      "libiconv": "esy-packages/esy-libiconv#38bab1ac2d53ae01b9c945620f6267446c4b2baa"
     }
   }
 }
