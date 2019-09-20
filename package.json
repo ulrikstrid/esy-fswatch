@@ -17,9 +17,7 @@
         "#{os == 'windows' ? 'CXXFLAGS=\"-DHAVE_WINDOWS\"' : ''}",
         "--prefix=#{self.install}",
         "--disable-dependency-tracking",
-        "--disable-silent-rules",
-        "-static-libgcc",
-        "-static-libstdc++"
+        "--disable-silent-rules"
       ],
       [
         "bash",
