@@ -11,7 +11,5 @@ esy install
 echo "ESY BUILD"
 esy build
 
-esy x fswatch --help
-
+esy b fswatch --help
 esy which fswatch
-esy x which fswatch

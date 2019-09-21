@@ -32,9 +32,9 @@ jobs:
     - script: esy build --verbose
       displayName: 'Build test project'
       workingDirectory: test_dir
-    - script: esy x fswatch --help
+    - script: esy b fswatch --help
       displayName: 'Test if fswatch is installed'
       workingDirectory: test_dir
-    - script: esy x which libtoolize
+    - script: esy b which fswatch
       displayName: 'Test if fswatch is installed'
       workingDirectory: test_dir
