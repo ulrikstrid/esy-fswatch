@@ -2,7 +2,7 @@ parameters:
   platform: darwin
 
 steps:
-- script: esy cp '#{fswatch.install}' $(Build.ArtifactStagingDirectory)/install-${{ parameters.platform }}
+- script: esy cp -R '#{fswatch.install}' $(Build.ArtifactStagingDirectory)/install-${{ parameters.platform }}
   displayName: Copy the install dir for ${{ parameters.platform }}
   workingDirectory: test_dir
 

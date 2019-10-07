@@ -2,6 +2,14 @@
   "name": "esy-fswatch-prebuilt",
   "version": "1.13.0",
   "esy": {
-    "build": ["cp", "install-#{os}", "#{self.install}"]
+    "build": [
+      "cp",
+      "install-#{os}",
+      "#{self.install}"
+    ],
+    "exportedEnv": {
+      "FSWATCH_INC": "-I#{self.install / 'include' / 'libfswatch' / 'c'}",
+      "LIBRARY_PATH": "#{self.lib}"
+    }
   }
 }
