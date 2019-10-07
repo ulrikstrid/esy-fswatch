@@ -1,0 +1,7 @@
+{
+  "name": "esy-fswatch-prebuilt",
+  "version": "1.13.0",
+  "esy": {
+    "build": ["cp", "install-#{os}", "#{self.install}"]
+  }
+}

@@ -1,40 +1,70 @@
-jobs:
-- job: macOS
-  pool:
-    vmImage: 'macOS-latest'
-  steps:
-    - template: ./.ci/use-esy.yml
-    - bash: ./test.sh
-      displayName: "Test package"
+stages:
+- stage: Build
+  jobs:
+  - job: macOS
+    pool:
+      vmImage: 'macOS-latest'
+    steps:
+      - template: ./.ci/use-esy.yml
+      - bash: ./test.sh
+        displayName: "Test package"
 
-- job: Linux
-  pool:
-    vmImage: 'Ubuntu-latest'
-  steps:
-    - template: ./.ci/use-esy.yml
-    - bash: ./test.sh
-      displayName: "Test package"
+  - job: Linux
+    pool:
+      vmImage: 'Ubuntu-latest'
+    steps:
+      - template: ./.ci/use-esy.yml
+      - bash: ./test.sh
+        displayName: "Test package"
 
-- job: Windows
-  pool:
-    vmImage: 'windows-latest'
-  steps:
-    - template: ./.ci/use-esy.yml
-    - bash: mkdir -p test_dir
-      displayName: 'make test dir'
-    - bash: |
-        echo '{"dependencies": {"fswatch" : "ulrikstrid/esy-fswatch:windows.json#'$(git rev-parse --short HEAD)'"}}' > package.json
-      displayName: 'create test package.json'
-      workingDirectory: test_dir
-    - script: esy install
-      displayName: 'Install esy-deps'
-      workingDirectory: test_dir
-    - script: esy build --verbose
-      displayName: 'Build test project'
-      workingDirectory: test_dir
-    - script: esy b fswatch --help
-      displayName: 'Test if fswatch is installed'
-      workingDirectory: test_dir
-    - script: esy b which fswatch
-      displayName: 'Test if fswatch is installed'
-      workingDirectory: test_dir
+  - job: Windows
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+      - template: ./.ci/use-esy.yml
+      - bash: mkdir -p test_dir
+        displayName: 'make test dir'
+      - bash: |
+          echo '{"dependencies": {"fswatch" : "ulrikstrid/esy-fswatch:windows.json#'$(git rev-parse --short HEAD)'"}}' > package.json
+        displayName: 'create test package.json'
+        workingDirectory: test_dir
+      - script: esy install
+        displayName: 'Install esy-deps'
+        workingDirectory: test_dir
+      - script: esy build --verbose
+        displayName: 'Build test project'
+        workingDirectory: test_dir
+      - script: esy b fswatch --help
+        displayName: 'Test if fswatch is installed'
+        workingDirectory: test_dir
+      - script: esy b which fswatch
+        displayName: 'Test if fswatch is installed'
+        workingDirectory: test_dir
+
+- stage: Create_package
+  dependsOn: [Build]
+  jobs:
+  - job: Create_package
+    displayName: Create package
+    pool:
+      vmImage: 'macOS-latest'
+    steps:
+    - task: NodeTool@0
+      displayName: "Use Node 8.x"
+      inputs:
+        versionSpec: 8.x
+
+    - download: current
+      artifact: install-darwin
+
+    - download: current
+      artifact: install-linux
+
+    - download: current
+      artifact: install-windows
+
+    - script: cp ./ci/package.json $(Pipeline.Workspace)/package.json
+
+    - script: npm pack .
+
+    - upload: esy-fswatch-prebuilt-1.13.0.tgz

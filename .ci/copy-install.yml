@@ -1,0 +1,8 @@
+parameters:
+  platform: darwing
+
+steps:
+- script: esy cp '#{fswatch.install}' $(Build.ArtifactStagingDirectory)/install-${{ parameters.platform }}
+
+- publish: $(Build.ArtifactStagingDirectory)/install-${{ parameters.platform }}
+  artifact: install-${{ parameters.platform }}
