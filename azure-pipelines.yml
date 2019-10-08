@@ -31,7 +31,7 @@ stages:
       - bash: mkdir -p test_dir
         displayName: 'make test dir'
       - bash: |
-          echo '{"esy": {"release": {"bin": [], "includePackages": ["fswatch"]}}, "dependencies": {"fswatch" : "ulrikstrid/esy-fswatch:windows.json#'$(git rev-parse --short HEAD)'", "ocaml": "< 4.09.0"}}' > package.json
+          echo '{"esy": {"release": {"bin": [], "includePackages": ["fswatch", "libiconv"]}}, "dependencies": {"fswatch" : "ulrikstrid/esy-fswatch:windows.json#'$(git rev-parse --short HEAD)'", "ocaml": "< 4.09.0", "libiconv": "esy-packages/esy-libiconv#38bab1ac2d53ae01b9c945620f6267446c4b2baa"}}' > package.json
         displayName: 'create test package.json'
         workingDirectory: test_dir
       - script: esy install
@@ -72,8 +72,19 @@ stages:
     - download: current
       artifact: install-windows
 
-    - script: cp ./ci/package.json $(Pipeline.Workspace)/package.json
+    - script: |
+        mkdir -p $(Pipeline.Workspace)/package
+        cp ./.ci/package.json $(Pipeline.Workspace)/package/package.json
+      displayName: Copy the package.json
+
+    - script: |
+        mv $(Pipeline.Workspace)/install-darwin $(Pipeline.Workspace)/package
+        mv $(Pipeline.Workspace)/install-linux $(Pipeline.Workspace)/package
+        mv $(Pipeline.Workspace)/install-windows $(Pipeline.Workspace)/package
+      displayName: Move artifacts in place
 
     - script: npm pack .
+      workingDirectory: 
+        mv $(Pipeline.Workspace)/package
 
-    - upload: esy-fswatch-prebuilt-1.13.0.tgz
+    - upload: esy-fswatch-prebuilt-1.13.4.tgz
