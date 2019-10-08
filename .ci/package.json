@@ -1,15 +1,40 @@
 {
   "name": "esy-fswatch-prebuilt",
-  "version": "1.13.0",
+  "version": "1.13.0004",
   "esy": {
     "build": [
-      "cp",
-      "install-#{os}",
-      "#{self.install}"
+      [
+        "cp",
+        "-R",
+        "#{ '.' / 'install-'os / 'lib' }",
+        "#{ self.install }"
+      ],
+      [
+        "cp",
+        "-R",
+        "#{ '.' / 'install-'os / 'bin' }",
+        "#{ self.install }"
+      ],
+      [
+        "cp",
+        "-R",
+        "#{ '.' / 'install-'os / 'include' }",
+        "#{ self.install / 'include' }"
+      ]
     ],
     "exportedEnv": {
-      "FSWATCH_INC": "-I#{self.install / 'include' / 'libfswatch' / 'c'}",
-      "LIBRARY_PATH": "#{self.lib}"
+      "FSWATCH_INC": {
+        "val": "-I#{self.install / 'include' / 'libfswatch' / 'c'}",
+        "scope": "global"
+      },
+      "LIBRARY_PATH": {
+        "val": "#{self.install / 'lib'}",
+        "scope": "global"
+      },
+      "PATH": {
+        "val": "#{self.install / 'bin'}#{os == 'windows' ? ';' : ':'}$PATH",
+        "scope": "global"
+      }
     }
   }
 }

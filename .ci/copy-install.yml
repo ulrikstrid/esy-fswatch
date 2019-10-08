@@ -2,9 +2,9 @@ parameters:
   platform: darwin
 
 steps:
-- script: esy cp -R '#{fswatch.install}' $(Build.ArtifactStagingDirectory)/install-${{ parameters.platform }}
+- script: esy npm-release
   displayName: Copy the install dir for ${{ parameters.platform }}
   workingDirectory: test_dir
 
-- publish: $(Build.ArtifactStagingDirectory)/install-${{ parameters.platform }}
+- publish: test_dir/_release
   artifact: install-${{ parameters.platform }}
