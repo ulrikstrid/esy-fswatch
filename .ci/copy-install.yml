@@ -2,9 +2,5 @@ parameters:
   platform: darwin
 
 steps:
-- script: esy npm-release
-  displayName: Copy the install dir for ${{ parameters.platform }}
-  workingDirectory: test_dir
-
-- publish: test_dir/_release
-  artifact: install-${{ parameters.platform }}
+- publish: test_dir/${{ parameters.platform }}
+  artifact: ${{ parameters.platform }}

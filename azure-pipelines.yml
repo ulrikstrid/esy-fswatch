@@ -58,7 +58,7 @@ stages:
       - bash: mkdir -p test_dir
         displayName: 'make test dir'
       - bash: |
-          echo '{"esy": {"release": {"bin": [], "includePackages": ["fswatch", "libiconv"]}}, "dependencies": {"fswatch" : "ulrikstrid/esy-fswatch:windows.json#'$(git rev-parse --short HEAD)'", "ocaml": "< 4.09.0", "libiconv": "esy-packages/esy-libiconv#38bab1ac2d53ae01b9c945620f6267446c4b2baa"}}' > package.json
+          echo '{"name": "esy-fswatch-prebuilx","esy": {"buildsInSource": "unsafe","build": "EsyPrebuiltApp.exe -action export -target \"#{self.root / os}\" -package \"#{esy-fswatch-prebuilt.install}\""}, "dependencies": {"esy-fswatch-prebuilt" : "ulrikstrid/esy-fswatch:windows.json#'$(git rev-parse --short HEAD)'", "esy-prebuilt-util": "0.1.2"},"resolutions": {"@reason-native/fs": "facebookexperimental/reason-native:fs.json#399da0bdefa4311af6d3849f2277bfb52024287e","@reason-native/path": "facebookexperimental/reason-native:fp.json#399da0bdefa4311af6d3849f2277bfb52024287e"}}' > package.json
         displayName: 'create test package.json'
         workingDirectory: test_dir
       - script: esy install
