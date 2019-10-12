@@ -3,6 +3,11 @@ parameters:
   INSTALL_PADDING: $(INSTALL_PADDING)
   HASH_FILE: esy.json
 
+# The cache key is built up of the following:
+# We use a string that we can change to bust the cache
+# The string esy
+# The string for the OS
+# The has of a file
 steps:
   - task: CacheBeta@0
     inputs:
