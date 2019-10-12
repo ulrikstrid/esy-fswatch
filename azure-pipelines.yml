@@ -4,7 +4,16 @@ stages:
   - job: macOS
     pool:
       vmImage: 'macOS-latest'
+    variables:
+      ESY__PREFIX: $(Pipeline.Workspace)/.esy
+      AZP_CACHING_TAR: true
+      INSTALL_PADDING: "/3_______________________________________________/i"
     steps:
+      - template: ./.ci/cache.yml
+        parameters:
+          ESY_PREFIX: $(ESY__PREFIX)
+          INSTALL_PADDING: $(INSTALL_PADDING)
+          HASH_FILE: esy.json
       - template: ./.ci/use-esy.yml
       - bash: ./test.sh
         displayName: "Test package"
@@ -15,7 +24,16 @@ stages:
   - job: Linux
     pool:
       vmImage: 'Ubuntu-latest'
+    variables:
+      ESY__PREFIX: $(Pipeline.Workspace)/.esy
+      AZP_CACHING_TAR: true
+      INSTALL_PADDING: "/3______________________________________________________________/i"
     steps:
+      - template: ./.ci/cache.yml
+        parameters:
+          ESY_PREFIX: $(ESY__PREFIX)
+          INSTALL_PADDING: $(INSTALL_PADDING)
+          HASH_FILE: esy.json
       - template: ./.ci/use-esy.yml
       - bash: ./test.sh
         displayName: "Test package"
@@ -26,7 +44,16 @@ stages:
   - job: Windows
     pool:
       vmImage: 'windows-latest'
+    variables:
+      ESY__PREFIX: $(Pipeline.Workspace)\.esy
+      AZP_CACHING_TAR: true
+      INSTALL_PADDING: "\\3_\\i"
     steps:
+      - template: ./.ci/cache.yml
+        parameters:
+          ESY_PREFIX: $(ESY__PREFIX)
+          INSTALL_PADDING: $(INSTALL_PADDING)
+          HASH_FILE: windows.json
       - template: ./.ci/use-esy.yml
       - bash: mkdir -p test_dir
         displayName: 'make test dir'
@@ -37,6 +64,7 @@ stages:
       - script: esy install
         displayName: 'Install esy-deps'
         workingDirectory: test_dir
+      - script: ls $(Pipeline.Workspace)\.esy
       - script: esy build --verbose
         displayName: 'Build test project'
         workingDirectory: test_dir

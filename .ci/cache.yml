@@ -1,0 +1,11 @@
+parameters:
+  ESY_PREFIX: $(ESY__PREFIX)
+  INSTALL_PADDING: $(INSTALL_PADDING)
+  HASH_FILE: esy.json
+
+steps:
+  - task: CacheBeta@0
+    inputs:
+      key: test_ESY_PREFIX_tar_i_path_cache | esy | $(Agent.OS) | ${{ parameters.HASH_FILE }}
+      path: ${{ parameters.ESY_PREFIX }}${{ parameters.INSTALL_PADDING }}
+    displayName: Cache esy packages
