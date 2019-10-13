@@ -45,15 +45,15 @@ stages:
     pool:
       vmImage: 'windows-latest'
     variables:
-      ESY__PREFIX: $(Pipeline.Workspace)\.esy
+      # ESY__PREFIX: $(Pipeline.Workspace)\.esy
       AZP_CACHING_TAR: true
       INSTALL_PADDING: "\\3_\\i"
     steps:
-      - template: ./.ci/cache.yml
-        parameters:
-          ESY_PREFIX: $(ESY__PREFIX)
-          INSTALL_PADDING: $(INSTALL_PADDING)
-          HASH_FILE: windows.json | test.sh
+      #- template: ./.ci/cache.yml
+      #  parameters:
+      #    ESY_PREFIX: $(ESY__PREFIX)
+      #    INSTALL_PADDING: $(INSTALL_PADDING)
+      #    HASH_FILE: windows.json | test.sh
       - template: ./.ci/use-esy.yml
       - bash: mkdir -p test_dir
         displayName: 'make test dir'
@@ -64,7 +64,6 @@ stages:
       - script: esy install
         displayName: 'Install esy-deps'
         workingDirectory: test_dir
-      - script: ls $(Pipeline.Workspace)\.esy
       - script: esy build --verbose
         displayName: 'Build test project'
         workingDirectory: test_dir
