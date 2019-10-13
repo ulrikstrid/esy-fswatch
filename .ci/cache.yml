@@ -9,7 +9,7 @@ parameters:
 # The string for the OS
 # The has of a file
 steps:
-  - task: CacheBeta@0
+  - task: CacheBeta@1
     inputs:
       key: test_ESY_PREFIX_tar_i_path_cache | esy | $(Agent.OS) | ${{ parameters.HASH_FILE }}
       path: ${{ parameters.ESY_PREFIX }}${{ parameters.INSTALL_PADDING }}
