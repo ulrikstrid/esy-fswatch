@@ -91,13 +91,13 @@ stages:
         versionSpec: 8.x
 
     - download: current
-      artifact: install-darwin
+      artifact: darwin
 
     - download: current
-      artifact: install-linux
+      artifact: linux
 
 #    - download: current
-#      artifact: install-windows
+#      artifact: windows
 
     - script: |
         mkdir -p $(Pipeline.Workspace)/package
@@ -105,8 +105,8 @@ stages:
       displayName: Copy the package.json
 
     - script: |
-        mv $(Pipeline.Workspace)/install-darwin $(Pipeline.Workspace)/package
-        mv $(Pipeline.Workspace)/install-linux $(Pipeline.Workspace)/package
+        mv $(Pipeline.Workspace)/darwin $(Pipeline.Workspace)/package
+        mv $(Pipeline.Workspace)/linux $(Pipeline.Workspace)/package
       displayName: Move artifacts in place
 
     - script: |
