@@ -13,7 +13,7 @@
         "scope": "global"
       },
       "PATH": {
-        "val": "#{self.install / 'bin'}#{os == 'windows' ? ';' : ':'}$PATH",
+        "val": "#{self.install / 'bin' : $PATH}",
         "scope": "global"
       }
     }
