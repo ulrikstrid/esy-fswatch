@@ -19,6 +19,6 @@
     }
   },
   "dependencies": {
-    "esy-prebuilt-util": "0.1.3"
+    "esy-prebuilt-util": "0.1.4"
   }
 }
