@@ -11,6 +11,7 @@ steps:
     inputs:
       key: test_move_tar_i_path_cache | esy | $(Agent.OS) | ${{ parameters.HASH_FILE }}
       path: $(CACHE_FOLDER)
+      cacheHitVar: CACHE_RESTORED
     displayName: Cache esy packages
 
   - script: 'mkdir -p $(ESY__CACHE_INSTALL_PATH)'
