@@ -1,6 +1,4 @@
 parameters:
-  ESY_PREFIX: $(ESY__PREFIX)
-  INSTALL_PADDING: $(INSTALL_PADDING)
   HASH_FILE: esy.json
 
 # The cache key is built up of the following:
@@ -11,6 +9,14 @@ parameters:
 steps:
   - task: CacheBeta@1
     inputs:
-      key: test_ESY_PREFIX_tar_i_path_cache | esy | $(Agent.OS) | ${{ parameters.HASH_FILE }}
-      path: ${{ parameters.ESY_PREFIX }}${{ parameters.INSTALL_PADDING }}
+      key: test_move_tar_i_path_cache | esy | $(Agent.OS) | ${{ parameters.HASH_FILE }}
+      path: $(CACHE_FOLDER)
     displayName: Cache esy packages
+
+  - script: 'mkdir -p $(ESY__CACHE_INSTALL_PATH)'
+    condition: eq(variables.CACHE_RESTORED, 'true')
+    displayName: '[Cache][Restore] Create esy cache directory'
+
+  - pwsh: Move-Item -Path $(CACHE_FOLDER)/* -Destination $(ESY__CACHE_INSTALL_PATH)
+    displayName: '[Cache][Restore] Move downloaded cache in place'
+    condition: eq(variables.CACHE_RESTORED, 'true')

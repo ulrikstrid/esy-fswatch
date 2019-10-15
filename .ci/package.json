@@ -1,6 +1,6 @@
 {
   "name": "esy-fswatch-prebuilt",
-  "version": "1.13.0006",
+  "version": "1.13.0007",
   "esy": {
     "build": "EsyPrebuiltApp.exe -action import -from '#{self.root / os}' -to '#{self.install}'",
     "exportedEnv": {
