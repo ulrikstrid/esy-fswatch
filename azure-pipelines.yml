@@ -26,14 +26,14 @@ stages:
       vmImage: 'Ubuntu-latest'
     variables:
       ESY__PREFIX: $(Pipeline.Workspace)/.esy
-      AZP_CACHING_TAR: true
+#      AZP_CACHING_TAR: true
       INSTALL_PADDING: "/3______________________________________________________________/i"
     steps:
-#      - template: ./.ci/cache.yml
-#        parameters:
-#          ESY_PREFIX: $(ESY__PREFIX)
-#          INSTALL_PADDING: $(INSTALL_PADDING)
-#          HASH_FILE: esy.json | test.sh
+      - template: ./.ci/cache.yml
+        parameters:
+          ESY_PREFIX: $(ESY__PREFIX)
+          INSTALL_PADDING: $(INSTALL_PADDING)
+          HASH_FILE: esy.json | test.sh
       - template: ./.ci/use-esy.yml
       - bash: ./test.sh
         displayName: "Test package"
