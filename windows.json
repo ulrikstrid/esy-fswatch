@@ -37,7 +37,7 @@
       },
       "PATH": {
         "scope": "global",
-        "val": "#{os == 'windows' ? '/usr/x86_64-w64-mingw32/sys-root/mingw/bin:$PATH': $PATH}"
+        "val": "#{os == 'windows' ? '/usr/x86_64-w64-mingw32/sys-root/mingw/bin;$PATH' : $PATH}"
       }
     },
     "dependencies": {
