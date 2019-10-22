@@ -4,21 +4,21 @@
   "esy": {
     "build": "EsyPrebuiltApp.exe -action import -from '#{self.root / os}' -to '#{self.install}'",
     "exportedEnv": {
-      "FSWATCH_INC": {
+      "FSWATCH_INC_C": {
         "val": "-I#{self.install / 'include' / 'libfswatch' / 'c'}",
         "scope": "global"
       },
-      "LIBRARY_PATH": {
-        "val": "#{self.install / 'lib'}",
+      "FSWATCH_INC_CPP": {
+        "val": "-I#{self.install / 'include' / 'libfswatch' / 'c++'}",
         "scope": "global"
       },
-      "PATH": {
-        "val": "#{self.install / 'bin' : $PATH}",
+      "LIBRARY_PATH": {
+        "val": "#{self.install / 'lib' : $LIBRARY_PATH}",
         "scope": "global"
       }
     }
   },
   "dependencies": {
-    "esy-prebuilt-util": "0.1.4"
+    "esy-prebuilt-util": "0.1.5"
   }
 }

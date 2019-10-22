@@ -42,41 +42,41 @@ stages:
           platform: linux
       - template: ./.ci/prepare-cache.yml
 
-  - job: Windows
-    pool:
-      vmImage: 'windows-latest'
-    variables:
-      AZP_CACHING_TAR: true
-      INSTALL_PADDING: "\\3_\\i"
-      CACHE_FOLDER: $(Pipeline.Workspace)\cache
-      ESY__CACHE_INSTALL_PATH: C:\Users\VssAdministrator\.esy\3_\i
-    steps:
-      - template: ./.ci/cache.yml
-        parameters:
-          HASH_FILE: windows.json | test.sh
-      - template: ./.ci/use-esy.yml
-      - bash: mkdir -p test_dir
-        displayName: 'make test dir'
-      - bash: |
-          echo '{"name": "esy-fswatch-prebuilx","esy": {"buildsInSource": "unsafe","build": "EsyPrebuiltApp.exe -action export -target \"#{self.root / os}\" -package \"#{esy-fswatch-prebuilt.install}\""}, "dependencies": {"esy-fswatch-prebuilt" : "ulrikstrid/esy-fswatch:windows.json#'$(git rev-parse --short HEAD)'", "esy-prebuilt-util": "0.1.4"}}' > package.json
-        displayName: 'create test package.json'
-        workingDirectory: test_dir
-      - script: esy install
-        displayName: 'Install esy-deps'
-        workingDirectory: test_dir
-      - script: esy build --verbose
-        displayName: 'Build test project'
-        workingDirectory: test_dir
-      - script: esy b fswatch --help
-        displayName: 'Test if fswatch is installed'
-        workingDirectory: test_dir
-      - script: esy b which fswatch
-        displayName: 'Test if fswatch is installed'
-        workingDirectory: test_dir
-      - template: ./.ci/copy-install.yml
-        parameters:
-          platform: windows
-      - template: ./.ci/prepare-cache.yml
+  # - job: Windows
+  #   pool:
+  #     vmImage: 'windows-latest'
+  #   variables:
+  #     AZP_CACHING_TAR: true
+  #     INSTALL_PADDING: "\\3_\\i"
+  #     CACHE_FOLDER: $(Pipeline.Workspace)\cache
+  #     ESY__CACHE_INSTALL_PATH: C:\Users\VssAdministrator\.esy\3_\i
+  #   steps:
+  #     - template: ./.ci/cache.yml
+  #       parameters:
+  #         HASH_FILE: windows.json | test.sh
+  #     - template: ./.ci/use-esy.yml
+  #     - bash: mkdir -p test_dir
+  #       displayName: 'make test dir'
+  #     - bash: |
+  #         echo '{"name": "esy-fswatch-prebuilx","esy": {"buildsInSource": "unsafe","build": "EsyPrebuiltApp.exe -action export -target \"#{self.root / os}\" -package \"#{esy-fswatch-prebuilt.install}\""}, "dependencies": {"esy-fswatch-prebuilt" : "ulrikstrid/esy-fswatch:windows.json#'$(git rev-parse --short HEAD)'", "esy-prebuilt-util": "0.1.5"}}' > package.json
+  #       displayName: 'create test package.json'
+  #       workingDirectory: test_dir
+  #     - script: esy install
+  #       displayName: 'Install esy-deps'
+  #       workingDirectory: test_dir
+  #     - script: esy build --verbose
+  #       displayName: 'Build test project'
+  #       workingDirectory: test_dir
+  #     - script: esy b fswatch --help
+  #       displayName: 'Test if fswatch is installed'
+  #       workingDirectory: test_dir
+  #     - script: esy b which fswatch
+  #       displayName: 'Test if fswatch is installed'
+  #       workingDirectory: test_dir
+  #     - template: ./.ci/copy-install.yml
+  #       parameters:
+  #         platform: windows
+  #     - template: ./.ci/prepare-cache.yml
 
 - stage: Create_package
   dependsOn: [Build]
@@ -97,8 +97,8 @@ stages:
     - download: current
       artifact: linux
 
-    - download: current
-      artifact: windows
+    # - download: current
+    #   artifact: windows
 
     - script: |
         mkdir -p $(Pipeline.Workspace)/package
@@ -108,7 +108,6 @@ stages:
     - script: |
         mv $(Pipeline.Workspace)/darwin $(Pipeline.Workspace)/package
         mv $(Pipeline.Workspace)/linux $(Pipeline.Workspace)/package
-        mv $(Pipeline.Workspace)/windows $(Pipeline.Workspace)/package
       displayName: Move artifacts in place
 
     - script: |
