@@ -1,6 +1,6 @@
 {
   "version": "1.13.0",
-  "source": "https://github.com/emcrisostomo/fswatch/releases/download/1.13.0/fswatch-1.13.0.tar.gz#c533fb6d9206814e12541282a76570412f65dc10",
+  "source": "https://github.com/emcrisostomo/fswatch/releases/download/1.13.0/fswatch-1.13.0.tar.gz",
   "override": {
     "buildsInSource": true,
     "build": [
